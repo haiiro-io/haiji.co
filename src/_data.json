@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "url": "http://haiji.co/",
+    "title": "灰色ハイジのポートフォリオ",
+    "twitter": "@haiji505",
+    "occupation": "Planner, UI/UX Designer",
+    "short_description": "フリーランスのPlanner, UI/UX Designer。デジタル施策の企画を中心に、デザインなどを手がける。主な仕事に祭 with android、AmazarashiのMV内のUIデザインなど。不定期に日テレSENSORSでインタビュアーなども務める。",
+    "description": "制作会社でWebデザイナーを経験後、クリエイティブエージェンシーSIXでプランナーに転身。2015年に独立。デジタル施策の企画を中心に、デザインなどを手がける。主な仕事に祭 with android、AmazarashiのMV内のUIデザインなど。不定期に日テレSENSORSでインタビュアーなども務める。",
+    "image_url": "http://haiiro.haiji.co/images/ogp_1200x630.jpg",
+    "copyright": "Haiji Haiiro"
+  },
+  "works": [
+    {
+      "name": "url-name",
+      "published_year": 2014,
+      "title": "タイトル",
+      "description": "内容とかとか\n内容とかとか",
+      "role": "Planner, UI Art Direction",
+      "link": "http://hogehoge.com/",
+      "image_count": 3,
+      "video": "http://youtube.com/hogehoge/",
+      "tags": ["planning", "design"],
+      "colors": ["#fff", "#999", "#666"]
+    },
+    {
+      "name": "url-name",
+      "published_year": 2014,
+      "title": "タイトル",
+      "description": "内容とかとか\n内容とかとか",
+      "role": "Planner, UI Art Direction",
+      "link": "http://hogehoge.com/",
+      "image_count": 3,
+      "video": "http://youtube.com/hogehoge/",
+      "tags": ["planning"],
+      "colors": ["#fff", "#999", "#666"]
+    },
+    {
+      "name": "url-name",
+      "published_year": 2014,
+      "title": "タイトル",
+      "description": "内容とかとか\n内容とかとか",
+      "role": "Planner, UI Art Direction",
+      "link": "http://hogehoge.com/",
+      "image_count": 3,
+      "video": "http://youtube.com/hogehoge/",
+      "tags": ["planning"],
+      "colors": ["#fff", "#999", "#666"]
+    }
+  ],
+  "links": [
+    {
+      "name": "Twitter",
+      "link": "https://twitter.com/haiji505",
+      "icon": "twitter"
+    },
+    {
+      "name": "facebook",
+      "link": "https://facebook.com/haiji505",
+      "icon": "facebook"
+    },
+    {
+      "name": "Tumblr",
+      "link": "http://haiji505.tumblr.com/",
+      "icon": "tumblr"
+    },
+    {
+      "name": "500px",
+      "link": "http://500px.com/haiji505",
+      "icon": "500px"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://instagram.com/haiji505",
+      "icon": "instagram"
+    },
+    {
+      "name": "Wishlist (1986/11/10)",
+      "link": "http://www.amazon.co.jp/registry/wishlist/31FH6CO5B6F8W",
+      "icon": "gift"
+    },
+    {
+      "name": "Blog",
+      "link": "http://blog.haiji.co",
+      "icon": "sticky-note-o"
+    },
+    {
+      "name": "Hatena Bookmark",
+      "link": "http://b.hatena.ne.jp/haiji505/bookmark",
+      "icon": "bookmark-o"
+    },
+    {
+      "name": "haiiro@haiji.co",
+      "link": "mailto:haiiro@haiji.co",
+      "icon": "envelope-o"
+    }
+  ],
+  "ogp": {
+    "og:url": "meta.url",
+    "og:type": "profile",
+    "og:title": "meta.title",
+    "og:description": "meta.short_description",
+    "og:image": "meta.image_url",
+    "og:image:type": "image/jpeg"
+  },
+  "twitter": {
+    "twitter:card": "summary_large_image",
+    "twitter:site": "meta.twitter",
+    "twitter:creator": "meta.twitter",
+    "twitter:title": "meta.title",
+    "twitter:description": "meta.short_description",
+    "twitter:image": "meta.image_url"
+  }
+ }
