@@ -12,6 +12,7 @@ body {
   font-size: @base-font-size;
   background-color: @haiiro-background-light;
   color: @base-font-color;
+  margin: 0;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   ::-moz-selection { background: @text-selection-color; }
@@ -24,9 +25,34 @@ a {
   &:hover, &:active, &:focus { color: #333; }
 }
 
+.content-field {
+  padding: 20px 0;
+}
+
+#cover {
+  .content-field;
+  background-color: @haiiro-background-dark;
+}
+
+#works {
+  .content-field;
+  background-color: @haiiro-background-light;
+  width: 100%;
+  .work {
+    padding: 18px 0;
+    font-size: 1.0em;
+    line-height: 1.0em;
+    .title {
+      text-align: left;
+    }
+    .year {
+      text-align: right;
+    }
+  }
+}
+
 #links {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  .content-field;
   background-color: @haiiro-background-dark;
   h2 {
     color: #d1d1d1;
@@ -59,7 +85,7 @@ a {
 }
 
 #footer {
-  padding-bottom: 10px;
+  .content-field;
   background-color: @haiiro-background-dark;
   p#copyright {
     color: #6b6b6b;
