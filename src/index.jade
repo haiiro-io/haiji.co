@@ -7,15 +7,54 @@
     h2.name= public._data.meta.copyright
     h3.occupation= public._data.meta.occupation
 
+#switcher
+  a#planning-tab(href='#planning') Planning
+  a#design-tab(href='#design') Design
+
 #works
   .g-wide-5-24.g-1-24
   .g-wide-14-24.g-11-12
-    each item in public._data.works
-      .work
-        .g-wide-3-4.g-1-1.title
-          = item.title
-        .g-wide-1-4.g-1-1.year
-          = item.published_year
+    - each tag in ['planning', 'design']
+      - var filtered = public._data.works.filter(function (w) { return (w.tags.indexOf(tag) != -1); } );
+      - eval(tag + '_works = filtered');
+
+    #planning-works.filtered-works
+      each work in planning_works
+        .work
+          .g-wide-3-4.g-1-1.title
+            = work.title
+          .g-wide-1-4.g-1-1.year
+            = work.published_year
+    #design-works.filtered-works
+      each work in design_works
+        .work
+          .g-wide-3-4.g-1-1.title
+            = work.title
+          .g-wide-1-4.g-1-1.year
+            = work.published_year
+
+script.
+  var planningTab = document.getElementById('planning-tab');
+  var planningWorks = document.getElementById('planning-works');
+  var designTab = document.getElementById('design-tab');
+  var designWorks = document.getElementById('design-works');
+
+  var switchWorks = function(target) {
+    if (target == 'planning') {
+      planningTab.className = 'active';
+      planningWorks.className = 'filtered-works active';
+      designTab.className = '';
+      designWorks.className = 'filtered-works';
+    } else {
+      planningTab.className = '';
+      planningWorks.className = 'filtered-works';
+      designTab.className = 'active';
+      designWorks.className = 'filtered-works active';
+    }
+  };
+  planningTab.addEventListener('click', function() { switchWorks('planning') }, false);
+  designTab.addEventListener('click', function() { switchWorks('design') }, false);
+  switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
 #links
   .g-wide-5-24.g-1-24

@@ -6,6 +6,7 @@
 @base-font-color: #444;
 @base-font-size: 16px;
 @text-selection-color: #d5d5d5;
+@text-emphasize-color: #e0559f;
 
 body {
   font-family: 'Quicksand', '游ゴシック体 ミディアム', 'YuGothic Medium', sans-serif;
@@ -34,6 +35,21 @@ a {
   background-color: @haiiro-background-dark;
 }
 
+#switcher {
+  margin: auto;
+  text-align: center;
+  background-color: @haiiro-background-dark;
+  a {
+    font-size: 1.5em;
+    margin-left: 50px;
+    &:first-child { margin-left: 0; }
+    &.active {
+      color: @text-emphasize-color;
+      border-bottom: 2px solid @text-emphasize-color;
+    }
+  }
+}
+
 #works {
   .content-field;
   background-color: @haiiro-background-light;
@@ -47,6 +63,12 @@ a {
     }
     .year {
       text-align: right;
+    }
+  }
+  .filtered-works {
+      display: none;
+    &.active {
+      display: block;
     }
   }
 }
