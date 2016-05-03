@@ -33,29 +33,6 @@
           .g-wide-1-4.g-1-1.year
             = work.published_year
 
-script.
-  var planningTab = document.getElementById('planning-tab');
-  var planningWorks = document.getElementById('planning-works');
-  var designTab = document.getElementById('design-tab');
-  var designWorks = document.getElementById('design-works');
-
-  var switchWorks = function(target) {
-    if (target == 'planning') {
-      planningTab.className = 'active';
-      planningWorks.className = 'filtered-works active';
-      designTab.className = '';
-      designWorks.className = 'filtered-works';
-    } else {
-      planningTab.className = '';
-      planningWorks.className = 'filtered-works';
-      designTab.className = 'active';
-      designWorks.className = 'filtered-works active';
-    }
-  };
-  planningTab.addEventListener('click', function() { switchWorks('planning') }, false);
-  designTab.addEventListener('click', function() { switchWorks('design') }, false);
-  switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
-
 #links
   .g-wide-5-24.g-1-24
   .g-wide-14-24.g-11-12
@@ -81,3 +58,28 @@ script.
       | Lovingly made by Haiji &amp;&nbsp;
       a(href='http://hmsk.me', target= '_blank') hmsk
       | .
+
+script.
+  (function() {
+    var planningTab = document.getElementById('planning-tab');
+    var planningWorks = document.getElementById('planning-works');
+    var designTab = document.getElementById('design-tab');
+    var designWorks = document.getElementById('design-works');
+
+    var switchWorks = function(target) {
+      if (target == 'planning') {
+        planningTab.classList.add('active');
+        planningWorks.classList.add('active');
+        designTab.classList.remove('active');
+        designWorks.classList.remove('active');
+      } else {
+        planningTab.classList.remove('active');
+        planningWorks.classList.remove('active');
+        designTab.classList.add('active');
+        designWorks.classList.add('active');
+      }
+    };
+    planningTab.addEventListener('click', function() { switchWorks('planning') }, false);
+    designTab.addEventListener('click', function() { switchWorks('design') }, false);
+    switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
+  })();
