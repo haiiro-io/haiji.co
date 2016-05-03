@@ -53,7 +53,7 @@
       "description": "内容とかとか\n内容とかとか",
       "role": "Planning, UI Design",
       "link": null,
-      "image_count": 3,
+      "image_count": 4,
       "video": "https://www.youtube.com/watch?v=JPXl-a8L7Go",
       "tags": ["planning", "design"],
       "colors": ["#66c6aa", "#dfdb96", "#cc4047"]
@@ -65,7 +65,7 @@
       "description": "内容とかとか\n内容とかとか",
       "role": "UI Design",
       "link": null,
-      "image_count": 3,
+      "image_count": 4,
       "video": "https://www.youtube.com/watch?v=wtJcLWeY114",
       "tags": ["design"],
       "colors": ["#797979", "#7b0b18", "#372f37"]
@@ -137,7 +137,7 @@
       "description": "内容とかとか\n内容とかとか",
       "role": "Planning, Art Direction",
       "link": null,
-      "image_count": 3,
+      "image_count": 2,
       "video": null,
       "tags": ["planning", "design"],
       "colors": ["#23afae", "#c90e55", "#ff9358"]
