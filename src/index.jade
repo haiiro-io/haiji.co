@@ -20,18 +20,20 @@
 
     #planning-works.filtered-works
       each work in planning_works
-        .work
-          .g-wide-3-4.g-1-1.title
-            = work.title
-          .g-wide-1-4.g-1-1.year
-            = work.published_year
+        a(href= '/works/' + work.name)
+          .work
+            .g-wide-3-4.g-1-1.title
+              = work.title
+            .g-wide-1-4.g-1-1.year
+              = work.published_year
     #design-works.filtered-works
       each work in design_works
-        .work
-          .g-wide-3-4.g-1-1.title
-            = work.title
-          .g-wide-1-4.g-1-1.year
-            = work.published_year
+        a(href= '/works/' + work.name)
+          .work
+            .g-wide-3-4.g-1-1.title
+              = work.title
+            .g-wide-1-4.g-1-1.year
+              = work.published_year
 
 #links
   .g-wide-5-24.g-1-24
