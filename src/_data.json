@@ -62,7 +62,7 @@
       "name": "route-music",
       "published_year": 2015,
       "title": "ROUTE MUSIC",
-      "description": "音楽の未来を発想するハッカソン、「Music Hack Day Tokyo 2015」に参加。OrpheとSpotify APIを用いて、マップを移動しながら各国出身のミュージシャンの音楽を再生するものを作りました。Orpheで現在地と歩いている方角を取得してグーグルマップに読み込み、マップ上でその先にある国を選択。その国出身のミュージシャンの音楽が流れます。\nオンキョーパイオニアイノベーションズ賞と、Orphe賞受賞。\nチームメンバー：高橋 鴻介 ・ 灰色 ハイジ ・ 山下 遼\nphoto by Kensuke Nakai",
+      "description": "音楽の未来を発想するハッカソン、「Music Hack Day Tokyo 2015」に参加。OrpheとSpotify APIを用いて、マップを移動しながら各国出身のミュージシャンの音楽を再生するものを作りました。Orpheで現在地と歩いている方角を取得してグーグルマップに読み込み、マップ上でその先にある国を選択。その国出身のミュージシャンの音楽が流れます。\nオンキョーパイオニアイノベーションズ賞、Orphe賞受賞。\n\nチームメンバー：高橋 鴻介 ・ 灰色 ハイジ ・ 山下 遼\nPhotos by Kensuke Nakai",
       "role": "Planner, Designer",
       "link": null,
       "image_count": 5,
