@@ -22,12 +22,13 @@ html
     #description
       .g-wide-6-24.g-1-24
       .g-wide-12-24.g-11-12
-        p!= selected.description.replace(/\n/g, "<br />")
+        p.content!= selected.description.replace(/\n/g, "<br />")
         if selected.role
-          p.role-index 役割
+          h2 役割
           p= selected.role
         if selected.link
-          p.role-index 関連リンク
-          p= selected.link
+          h2 関連リンク
+          p
+            a(href= selected.link, target= '_blank')= selected.link
 
     != partial('../_shared/footer')
