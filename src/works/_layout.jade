@@ -22,7 +22,7 @@ html
     #description
       .g-wide-6-24.g-1-24
       .g-wide-12-24.g-11-12
-        p= selected.description
+        p!= selected.description.replace(/\n/g, "<br />")
         if selected.role
           p.role-index 役割
           p= selected.role
