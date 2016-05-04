@@ -4,4 +4,28 @@ html
     != partial('../_shared/head')
   body
     - selected = public._data.works.find(function (w) { return w.name == current.source; } );
-    p= selected.title
+    #title-bar
+      .g-wide-6-24.g-8-24
+        != partial('../_shared/haiiro_icon', { size: '14', color: '#999' })
+      .g-wide-12-24.g-16-24
+        .g-wide-3-4.g-1-2
+          p.title= selected.title
+        .g-wide-1-4.g-5-12.year
+          p.year= selected.published_year
+    #images
+      .g-wide-6-24.g-1-24
+      .g-wide-12-24.g-11-12
+        - for (i = 1; i <= selected.image_count; i++)
+          img(src= '../images/' + selected.name + '_0' + i + '.jpg')
+        if selected.video
+          iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
+    #description
+      .g-wide-6-24.g-1-24
+      .g-wide-12-24.g-11-12
+        p= selected.description
+        if selected.role
+          p.role-index 役割
+          p= selected.role
+        if selected.link
+          p.role-index 関連リンク
+          p= selected.link
