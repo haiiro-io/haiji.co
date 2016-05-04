@@ -23,6 +23,18 @@
       "colors": ["#163759", "#cb2c48", "#e3c664"]
     },
     {
+      "name": "lib-membership-familyship-logo",
+      "published_year": 2016,
+      "title": "LiB メンバーシップ＆ファミリーシップ ロゴデザイン",
+      "description": "株式会社LiBのメンバーシップ＆ファミリーシップという制度のロゴをデザインしました。",
+      "role": "Graphic Design",
+      "link": null,
+      "image_count": 1,
+      "video": null,
+      "tags": ["design"],
+      "colors": ["#387298", "#dd4246", "#ffffff"]
+    },
+    {
       "name": "pokemon-go",
       "published_year": 2015,
       "title": "Pokemon Go",
