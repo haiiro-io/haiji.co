@@ -38,31 +38,7 @@
             .work-image
               img(src= '/images/' + work.name + '_1.jpg')
 
-#links
-  .g-wide-5-24.g-1-24
-  .g-wide-14-24.g-11-12
-    h2 Contacts to @haiji505
-    each item in public._data.links
-      .g-wide-1-3.g-1-1
-        .link-box
-          a(href= item.link, target= '_blank')
-            .icon-box
-              i.fa(class= 'fa-' + item.icon)
-              span.link-name= item.name
-
-#footer
-  .g-wide-5-24.g-1-24
-  .g-wide-14-24.g-11-12
-    p#copyright
-      | &copy;&nbsp;
-      = new Date().getYear() + 1900
-      | &nbsp;
-      = public._data.meta.copyright
-      | .
-      br/
-      | Lovingly made by Haiji &amp;&nbsp;
-      a(href='http://hmsk.me', target= '_blank') hmsk
-      | .
+!= partial('_shared/footer')
 
 script.
   (function() {

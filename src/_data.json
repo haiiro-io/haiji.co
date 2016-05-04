@@ -191,53 +191,6 @@
       "colors": ["#ffffff", "#ffffff", "#ffffff"]
     }
   ],
-  "links": [
-    {
-      "name": "Twitter",
-      "link": "https://twitter.com/haiji505",
-      "icon": "twitter"
-    },
-    {
-      "name": "facebook",
-      "link": "https://facebook.com/haiji505",
-      "icon": "facebook"
-    },
-    {
-      "name": "Tumblr",
-      "link": "http://haiji505.tumblr.com/",
-      "icon": "tumblr"
-    },
-    {
-      "name": "500px",
-      "link": "http://500px.com/haiji505",
-      "icon": "500px"
-    },
-    {
-      "name": "Instagram",
-      "link": "https://instagram.com/haiji505",
-      "icon": "instagram"
-    },
-    {
-      "name": "Wishlist (1986/11/10)",
-      "link": "http://www.amazon.co.jp/registry/wishlist/31FH6CO5B6F8W",
-      "icon": "gift"
-    },
-    {
-      "name": "Blog",
-      "link": "http://blog.haiji.co",
-      "icon": "sticky-note-o"
-    },
-    {
-      "name": "Hatena Bookmark",
-      "link": "http://b.hatena.ne.jp/haiji505/bookmark",
-      "icon": "bookmark-o"
-    },
-    {
-      "name": "haiiro@haiji.co",
-      "link": "mailto:haiiro@haiji.co",
-      "icon": "envelope-o"
-    }
-  ],
   "ogp": {
     "og:url": "meta.url",
     "og:type": "profile",
