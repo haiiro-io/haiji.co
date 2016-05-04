@@ -1,0 +1,7 @@
+doctype
+html
+  head
+    != partial('../_shared/head')
+  body
+    - selected = public._data.works.find(function (w) { return w.name == current.source; } );
+    p= selected.title
