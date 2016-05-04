@@ -42,7 +42,7 @@
       "role": "Planner, UI Designer",
       "link": null,
       "image_count": 3,
-      "video": "https://www.youtube.com/watch?v=lKUwVYUKii4",
+      "video": "https://www.youtube.com/embed/lKUwVYUKii4",
       "tags": ["planning", "design"],
       "colors": ["#163759", "#cb2c48", "#e3c664"]
     },
@@ -78,7 +78,7 @@
       "role": "Interactive Planner, UI Director",
       "link": null,
       "image_count": 4,
-      "video": "https://www.youtube.com/watch?v=JPXl-a8L7Go",
+      "video": "https://www.youtube.com/embed/JPXl-a8L7Go",
       "tags": ["planning", "design"],
       "colors": ["#66c6aa", "#dfdb96", "#cc4047"]
     },
@@ -90,7 +90,7 @@
       "role": "UI Designer",
       "link": null,
       "image_count": 4,
-      "video": "https://www.youtube.com/watch?v=wtJcLWeY114",
+      "video": "https://www.youtube.com/embed/wtJcLWeY114",
       "tags": ["design"],
       "colors": ["#797979", "#7b0b18", "#372f37"]
     },
@@ -102,7 +102,7 @@
       "role": "UI Designer",
       "link": null,
       "image_count": 3,
-      "video": "https://www.youtube.com/watch?v=B2HsdgVQ-cc",
+      "video": "https://www.youtube.com/embed/B2HsdgVQ-cc",
       "tags": ["design"],
       "colors": ["#34393d", "#263228", "#555c6f"]
     },
@@ -162,7 +162,7 @@
       "role": "Interactive Planner, Art Director",
       "link": null,
       "image_count": 2,
-      "video": "https://www.youtube.com/watch?v=xOUtXJchtPk",
+      "video": "https://www.youtube.com/embed/xOUtXJchtPk",
       "tags": ["planning", "design"],
       "colors": ["#23afae", "#c90e55", "#ff9358"]
     },
