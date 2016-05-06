@@ -42,25 +42,12 @@
 
 script.
   (function() {
-    var planningTab = document.getElementById('planning-tab');
-    var planningWorks = document.getElementById('planning-works');
-    var designTab = document.getElementById('design-tab');
-    var designWorks = document.getElementById('design-works');
-
+    var plannings = u('#planning-tab, #planning-works');
+    var designs = u('#design-tab, #design-works');
     var switchWorks = function(target) {
-      if (target == 'planning') {
-        planningTab.classList.add('active');
-        planningWorks.classList.add('active');
-        designTab.classList.remove('active');
-        designWorks.classList.remove('active');
-      } else {
-        planningTab.classList.remove('active');
-        planningWorks.classList.remove('active');
-        designTab.classList.add('active');
-        designWorks.classList.add('active');
-      }
+      (target == 'planning' ? plannings : designs).addClass('active');
+      (target == 'planning' ? designs : plannings).removeClass('active');
     };
-    planningTab.addEventListener('click', function() { switchWorks('planning') }, false);
-    designTab.addEventListener('click', function() { switchWorks('design') }, false);
+    u('#planning-tab, #design-tab').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab', '')); });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
   })();
