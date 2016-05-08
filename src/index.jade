@@ -69,4 +69,14 @@ script.
       paintHaiiro(defaultColors);
     });
     paintHaiiro(defaultColors);
+
+    var resizeBanner = function() {
+      var coverHeight = window.innerHeight * 0.85;
+      u('#cover').attr('style', 'height: ' + coverHeight + 'px;')
+      u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
+      var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
+      u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
+    };
+    resizeBanner();
+    window.onresize = resizeBanner;
   })();
