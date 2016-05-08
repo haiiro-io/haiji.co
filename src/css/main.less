@@ -3,6 +3,7 @@
 
 @haiiro-background-dark: #e4e4e4;
 @haiiro-background-light: #f1f1f1;
+@haiiro-section-border: #d6d6d6;
 @base-font-color: #444;
 @base-font-size: 16px;
 @text-selection-color: #d5d5d5;
@@ -30,6 +31,20 @@ a {
   padding: 20px 0;
 }
 
+.switcher-links {
+  a {
+    height: inherit;
+    display: inline-block;
+    font-size: 1.3em;
+    margin-left: 50px;
+    &:first-child { margin-left: 0; }
+    &.active {
+      color: @text-emphasize-color;
+      border-bottom: 2px solid @text-emphasize-color;
+    }
+  }
+}
+
 #title-bar {
   padding: 10px 0;
   background-color: @haiiro-background-dark;
@@ -47,6 +62,7 @@ a {
   background-color: @haiiro-background-dark;
   opacity: 0;
   transition: opacity .4s ease-in;
+  border-bottom: 1px solid @haiiro-section-border;
   &.show {
     opacity: 1;
   }
@@ -63,6 +79,12 @@ a {
     &.year {
       text-align: right;
     }
+  }
+  .tabs {
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    .switcher-links;
   }
 }
 
@@ -100,7 +122,6 @@ a {
   .content-field;
   background-color: @haiiro-background-dark;
   min-height: 350px;
-
   svg.haiiro-icon {
     margin-left: 20px;
   }
@@ -110,7 +131,6 @@ a {
       text-align: center;
       margin-bottom: 0.2em;
     }
-
     .occupation {
       font-size: 1.2em;
       text-align: center;
@@ -119,19 +139,20 @@ a {
 }
 
 #switcher {
+  height: 65px;
   margin: auto;
-  text-align: center;
   background-color: @haiiro-background-dark;
-  a {
-    height: 35px;
-    display: inline-block;
-    font-size: 1.3em;
-    margin-left: 50px;
-    &:first-child { margin-left: 0; }
-    &.active {
-      color: @text-emphasize-color;
-      border-bottom: 2px solid @text-emphasize-color;
+  border-bottom: 1px solid @haiiro-section-border;
+  text-align: center;
+  .tabs {
+    height: 64px;
+    line-height: 64px;
+    opacity: 0;
+    transition: opacity .4s ease-in;
+    &.show {
+      opacity: 1;
     }
+    .switcher-links
   }
 }
 

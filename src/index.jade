@@ -1,7 +1,11 @@
 #nav-bar
   .g-wide-5-24.g-1-6.icon
     != partial('_shared/haiiro_icon', { size: '15', color: '#e0559f', id: 'nav-icon' })
-  .g-wide-19-24.g-10-12
+  .g-wide-14-24.g-2-3
+    .tabs
+      a#planning-tab-header(href='#planning') Planning
+      a#design-tab-header(href='#design') Design
+  .g-wide-5-24.g-1-6
 
 #cover
   .g-wide-5-24.g-1-6
@@ -14,8 +18,9 @@
       .occupation= public._data.meta.occupation
 
 #switcher
-  a#planning-tab(href='#planning') Planning
-  a#design-tab(href='#design') Design
+  .tabs.show
+    a#planning-tab(href='#planning') Planning
+    a#design-tab(href='#design') Design
 
 #works
   - each tag in ['planning', 'design']
@@ -47,14 +52,34 @@
 
 script.
   (function() {
-    var plannings = u('#planning-tab, #planning-works');
-    var designs = u('#design-tab, #design-works');
+    var plannings = u('#planning-tab, #planning-works, #planning-tab-header');
+    var designs = u('#design-tab, #design-works, #design-tab-header');
     var switchWorks = function(target) {
       (target == 'planning' ? plannings : designs).addClass('active');
       (target == 'planning' ? designs : plannings).removeClass('active');
     };
-    u('#planning-tab, #design-tab').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab', '')); });
+    u('.tabs > a').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab-header', '').replace('-tab', '')); });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
+
+    var scrollTo = function(target) {
+      var to = u(target).nodes[0].offsetTop
+      var diff =  to - document.body.scrollTop;
+      var perTick = diff / 12;
+      setTimeout(function() {
+        if (perTick < 1) {
+          u(target).scroll();
+        } else {
+          document.body.scrollTop = document.body.scrollTop + perTick;
+          if (document.body.scrollTop === to) return;
+          scrollTo(target);
+        }
+      }, 10);
+    };
+    u('#planning-tab, #design-tab').on('click', function() {
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
+      // u('#switcher').scroll();
+      scrollTo('#switcher');
+    });
 
     var rects = u('svg.haiiro-icon#nav-icon > rect');
     u('#planning-works a, #design-works a').on('mouseover', function(e) {
@@ -77,7 +102,7 @@ script.
     paintHaiiro(u('svg.haiiro-icon#top-icon > rect'), defaultColors);
 
     var resizeBanner = function() {
-      var coverHeight = window.innerHeight * 0.85;
+      var coverHeight = window.innerHeight * 0.80;
       u('#cover').attr('style', 'height: ' + coverHeight + 'px;')
       u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
       var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
@@ -89,8 +114,10 @@ script.
     window.addEventListener('scroll', function(e) {
       if (window.scrollY > 100) {
         u('#nav-bar').addClass('show');
+        u('#switcher > .tabs').removeClass('show');
       } else {
         u('#nav-bar').removeClass('show');
+        u('#switcher > .tabs').addClass('show');
       }
     });
   })();
