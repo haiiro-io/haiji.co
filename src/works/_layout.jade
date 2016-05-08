@@ -4,13 +4,13 @@ html
     != partial('../_shared/head')
   body
     - selected = public._data.works.find(function (w) { return w.name == current.source; } );
-    #title-bar
-      .g-wide-6-24.g-8-24
-        != partial('../_shared/haiiro_icon', { size: '14', color: '#999' })
-      .g-wide-12-24.g-16-24
+    #nav-bar.show
+      .g-wide-6-24.g-1-24.icon
+        != partial('../_shared/haiiro_icon', { size: '15', color: '#e4e4e4', id: 'nav-icon' })
+      .g-wide-12-24.g-11-12
         .g-wide-3-4.g-1-2
           p.title= selected.title
-        .g-wide-1-4.g-5-12.year
+        .g-wide-1-4.g-5-12
           p.year= selected.published_year
     #images
       .g-wide-6-24.g-1-24
@@ -32,3 +32,14 @@ html
             a(href= selected.link, target= '_blank')= selected.link
 
     != partial('../_shared/footer')
+
+script.
+  (function() {
+    var rects = u('svg.haiiro-icon#nav-icon > rect');
+    var colors = "#{selected.colors}".split(',');
+    var pallet = [];
+    for (i = 0; i < rects.length; i++) {
+      pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
+    }
+    for (i = 0; i < rects.length; i++) { u(rects.nodes[i]).attr('fill', pallet[i]); }
+  })();
