@@ -17,17 +17,17 @@
     - var filtered = public._data.works.filter(function (w) { return (w.tags.indexOf(tag) != -1); } );
     - eval(tag + '_works = filtered');
 
-  .g-wide-6-24.g-1-24
-  .g-wide-12-24.g-11-12
-    #planning-works.filtered-works
-      each work in planning_works
-        a(href= '/works/' + work.name, data-colors= work.colors.join(','))
+  #planning-works.filtered-works
+    each work in planning_works
+      a(href= '/works/' + work.name, data-colors= work.colors.join(','))
+        .g-wide-6-24.g-1-24
+        .g-wide-12-24.g-11-12
           .work
             .g-wide-3-4.g-1-1.title
               = work.title
             .g-wide-1-4.g-1-1.year
               = work.published_year
-  .g-wide-5-24.g-1-24
+        .g-wide-5-24.g-1-24
 
   .g-wide-2-24.g-1-24
   .g-wide-20-24.g-11-12

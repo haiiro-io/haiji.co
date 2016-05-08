@@ -114,22 +114,33 @@ a {
   .content-field;
   background-color: @haiiro-background-light;
   width: 100%;
-  .work {
-    padding: 18px 0;
-    font-size: 1.0em;
-    line-height: 1.0em;
-    .title {
-      text-align: left;
+  #planning-works {
+    a {
+      display: block;
+      width: 100%;
+      &:hover {
+        background-color: @haiiro-background-dark;
+      }
     }
-    .year {
-      text-align: right;
+    .work {
+      height: 60px;
+      line-height: 60px;
+      font-size: 1.0em;
+      .title {
+        text-align: left;
+      }
+      .year {
+        text-align: right;
+      }
     }
   }
-  .work-image {
-    margin-top: 40px;
-    text-align: center;
-    img {
-      height: 160px;
+  #design-works {
+    .work-image {
+      margin-top: 40px;
+      text-align: center;
+      img {
+        height: 160px;
+      }
     }
   }
   .filtered-works {
