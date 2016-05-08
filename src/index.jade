@@ -1,6 +1,11 @@
+#nav-bar
+  .g-wide-5-24.g-1-6.icon
+    != partial('_shared/haiiro_icon', { size: '15', color: '#e0559f', id: 'nav-icon' })
+  .g-wide-19-24.g-10-12
+
 #cover
   .g-wide-5-24.g-1-6
-    != partial('_shared/haiiro_icon', { size: '30', color: '#e0559f' })
+    != partial('_shared/haiiro_icon', { size: '30', color: '#e0559f', id: 'top-icon' })
   .g-wide-19-24.g-10-12
   .g-wide-5-24.g-1-24
   .g-wide-14-24.g-11-12
@@ -51,24 +56,25 @@ script.
     u('#planning-tab, #design-tab').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab', '')); });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
-    var rects = u('svg.haiiro-icon > rect');
-    u('#works a').on('mouseover', function(e) {
+    var rects = u('svg.haiiro-icon#nav-icon > rect');
+    u('#planning-works a, #design-works a').on('mouseover', function(e) {
       var colors = u(this).data('colors').split(',');
       var pallet = [];
       for (i = 0; i < rects.length; i++) {
         pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
       }
-      paintHaiiro(pallet);
+      paintHaiiro(rects, pallet);
     });
-    var paintHaiiro = function(colors) {
+    var paintHaiiro = function(rects, colors) {
       if (colors.length != 7) return;
       for (i = 0; i < rects.length; i++) { u(rects.nodes[i]).attr('fill', colors[i]); }
     }
     var defaultColors = ['#d4d4d4', '#a7a7a7', '#cfcfcf', '#d7d7d7', '#cdcdcd', '#c7c7c7', '#d1d1d1'];
     u('#works a').on('mouseleave', function(e) {
-      paintHaiiro(defaultColors);
+      paintHaiiro(rects, defaultColors);
     });
-    paintHaiiro(defaultColors);
+    paintHaiiro(rects, defaultColors);
+    paintHaiiro(u('svg.haiiro-icon#top-icon > rect'), defaultColors);
 
     var resizeBanner = function() {
       var coverHeight = window.innerHeight * 0.85;
@@ -79,4 +85,12 @@ script.
     };
     resizeBanner();
     window.onresize = resizeBanner;
+
+    window.addEventListener('scroll', function(e) {
+      if (window.scrollY > 100) {
+        u('#nav-bar').addClass('show');
+      } else {
+        u('#nav-bar').removeClass('show');
+      }
+    });
   })();

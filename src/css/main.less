@@ -42,6 +42,23 @@ a {
   }
 }
 
+#nav-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 65px;
+  background-color: @haiiro-background-dark;
+  opacity: 0;
+  transition: opacity .4s ease-in;
+  &.show {
+    opacity: 1;
+  }
+  .icon {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}
+
 #images {
   .content-field;
   background-color: @haiiro-background-light;
