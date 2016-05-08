@@ -9,18 +9,14 @@
   switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
   var scrollTo = function(target) {
-    var to = u(target).nodes[0].offsetTop
-    var diff =  to - document.body.scrollTop;
-    var perTick = diff / 12;
     setTimeout(function() {
-      if (perTick < 1) {
+      if (u(target).nodes[0].offsetTop - document.body.scrollTop < 1) {
         u(target).scroll();
       } else {
-        document.body.scrollTop = document.body.scrollTop + perTick;
-        if (document.body.scrollTop === to) return;
+        document.body.scrollTop = document.body.scrollTop + 12;
         scrollTo(target);
       }
-    }, 10);
+    }, 8);
   };
   u('#planning-tab, #design-tab').on('click', function() {
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
