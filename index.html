@@ -5,20 +5,21 @@
     (target == 'planning' ? plannings : designs).addClass('active');
     (target == 'planning' ? designs : plannings).removeClass('active');
   };
-  u('.tabs > a').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab-header', '').replace('-tab', '')); });
+  u('.tabs > a').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab-header', '').replace('-tab', '')); e.preventDefault(); });
   switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
   var scrollTo = function(target) {
     setTimeout(function() {
-      if (u(target).nodes[0].offsetTop - document.body.scrollTop < 1) {
+      var direction = u(target).nodes[0].offsetTop < document.body.scrollTop ? -1 : 1;
+      if (Math.abs(u(target).nodes[0].offsetTop - document.body.scrollTop) < 8) {
         u(target).scroll();
       } else {
-        document.body.scrollTop = document.body.scrollTop + 12;
+        document.body.scrollTop = document.body.scrollTop + 10 * direction;
         scrollTo(target);
       }
-    }, 8);
+    }, 5);
   };
-  u('#planning-tab, #design-tab').on('click', function() {
+  u('#planning-tab, #design-tab, #planning-tab-header, #design-tab-header').on('click', function() {
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
     // u('#switcher').scroll();
     scrollTo('#switcher');
