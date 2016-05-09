@@ -5,16 +5,16 @@ html
   body
     - selected = public._data.works.find(function (w) { return w.name == current.source; } );
     #nav-bar.show
-      .g-wide-6-24.g-1-24.icon
+      .g-wide-6-24.g-1-4.icon
         != partial('../_shared/haiiro_icon', { size: '15', color: '#e4e4e4', id: 'nav-icon' })
-      .g-wide-12-24.g-11-12
-        .g-wide-3-4.g-1-2
+      .g-wide-12-24.g-2-3
+        .g-wide-3-4.g-20-24
           p.title= selected.title
-        .g-wide-1-4.g-5-12
+        .g-wide-1-4.g-4-24
           p.year= selected.published_year
     #images
       .g-wide-6-24.g-1-24
-      .g-wide-12-24.g-11-12
+      .g-wide-12-24.g-22-24
         - for (i = 1; i <= selected.image_count; i++)
           img(src= '../images/' + selected.name + '_' + i + '.jpg')
         if selected.video
