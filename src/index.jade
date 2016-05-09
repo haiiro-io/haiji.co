@@ -104,8 +104,11 @@ script.
       var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
       u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
     };
+    window.onresize = function() {
+      if (window.innerWidth < 768) return;
+      resizeBanner();
+    }
     resizeBanner();
-    window.onresize = resizeBanner;
 
     window.addEventListener('scroll', function(e) {
       if (window.scrollY > 100) {
