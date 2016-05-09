@@ -210,6 +210,11 @@ a {
           width: inherit;
           height: 160px;
         }
+        opacity: 1;
+        &:hover, &:active, &:focus {
+          opacity: 0.6;
+        }
+        transition: opacity .6s ease;
       }
     }
   }
