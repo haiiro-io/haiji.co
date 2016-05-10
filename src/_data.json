@@ -20,7 +20,7 @@
       "image_count": 1,
       "video": null,
       "tags": ["design"],
-      "colors": ["#163759", "#cb2c48", "#e3c664"]
+      "colors": ["#fcbb00", "#e9e5a8", "#ffffff"]
     },
     {
       "name": "lib-membership-familyship-logo",
@@ -44,7 +44,7 @@
       "image_count": 3,
       "video": "https://www.youtube.com/embed/lKUwVYUKii4",
       "tags": ["planning", "design"],
-      "colors": ["#163759", "#cb2c48", "#e3c664"]
+      "colors": ["#f13648", "#ffd953", "#4e66a3"]
     },
     {
       "name": "bapa-excitoss",
@@ -56,7 +56,7 @@
       "image_count": 7,
       "video": null,
       "tags": ["planning", "design"],
-      "colors": ["#df447d", "#1c99c7", "#c0f302"]
+      "colors": ["#fc90c4", "#7adbfe", "#ddf680"]
     },
     {
       "name": "route-music",
@@ -68,7 +68,7 @@
       "image_count": 5,
       "video": null,
       "tags": ["planning", "design"],
-      "colors": ["#8acacc", "#ff6930", "#ffffff"]
+      "colors": ["#e3c549", "#6adaa5", "#89e4e7"]
     },
     {
       "name": "google-android-taico",
@@ -80,7 +80,7 @@
       "image_count": 4,
       "video": "https://www.youtube.com/embed/JPXl-a8L7Go",
       "tags": ["planning", "design"],
-      "colors": ["#66c6aa", "#dfdb96", "#cc4047"]
+      "colors": ["#32feb7", "#c4fffc", "#f6acfb"]
     },
     {
       "name": "amazarashi-seasons-die-one-after-another",
@@ -92,7 +92,7 @@
       "image_count": 4,
       "video": "https://www.youtube.com/embed/wtJcLWeY114",
       "tags": ["design"],
-      "colors": ["#797979", "#7b0b18", "#372f37"]
+      "colors": ["#797979", "#a40505", "#686868"]
     },
     {
       "name": "amazarashi-digging-holes",
@@ -116,7 +116,7 @@
       "image_count": 2,
       "video": null,
       "tags": ["design"],
-      "colors": ["#2d9c4f", "#08631d", "#1e3022"]
+      "colors": ["#2d9c4f", "#08631d", "#60b059"]
     },
     {
       "name": "ps4-thelastofus",
@@ -164,7 +164,7 @@
       "image_count": 2,
       "video": "https://www.youtube.com/embed/xOUtXJchtPk",
       "tags": ["planning", "design"],
-      "colors": ["#23afae", "#c90e55", "#ff9358"]
+      "colors": ["#fa9544", "#f2eac2", "#51c6db", "#93fd26", "#dbaae6", "#cecece", "#769acb"]
     },
     {
       "name": "googleplus-cover-project",
@@ -176,7 +176,7 @@
       "image_count": 3,
       "video": null,
       "tags": ["planning"],
-      "colors": ["#0d3569", "#a7190f", "#cfb120"]
+      "colors": ["#e20012", "#cfddd0", "#f2b3ce","#f9dd00", "#b9c2c9", "#019d38","#015fa7"]
     },
     {
       "name": "bourbon-petit",
@@ -188,7 +188,7 @@
       "image_count": 2,
       "video": null,
       "tags": ["design"],
-      "colors": ["#e70012", "#ffffff", "#060606"]
+      "colors": ["#eeddd6", "#d1d1c7", "#a9cbd5","#ffd984", "#ead795", "#efdd55", "#e1081b"]
     },
     {
       "name": "tsundokubon",
@@ -200,7 +200,7 @@
       "image_count": 1,
       "video": null,
       "tags": ["planning", "design"],
-      "colors": ["#faeac9", "#544028", "#4e6986"]
+      "colors": ["#b48b5d", "#6985a2", "#d4c8b2"]
     },
     {
       "name": "out-mount-furniture",
