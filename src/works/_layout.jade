@@ -16,7 +16,7 @@ html
       .g-wide-6-24.g-1-24
       .g-wide-12-24.g-22-24
         - for (i = 1; i <= selected.image_count; i++)
-          img(src= '../images/' + selected.name + '_' + i + '.jpg')
+          img(src= '../images/works/' + selected.name + '_' + i + '.jpg')
         if selected.video
           iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
     #description
