@@ -3,7 +3,7 @@ html
   head
     != partial('../_shared/head')
   body
-    - selected = public._data.works.find(function (w) { return w.name == current.source; } );
+    - selected = public.works._data.find(function (w) { return w.name == current.source; } );
     #nav-bar.show
       .g-wide-6-24.g-1-4.icon
         != partial('../_shared/haiiro_icon', { size: '15', color: '#e4e4e4', id: 'nav-icon' })
