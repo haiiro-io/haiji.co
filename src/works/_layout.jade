@@ -36,7 +36,6 @@ html
 
 script.
   (function() {
-    u('#description, #footer, iframe.video').attr('style', 'display: none;');
     var imageLoadedCount = 0;
     var images = []
     for (var i = 1; i <= #{selected.image_count}; i++) {
@@ -47,7 +46,7 @@ script.
     }
     var showImages = function(ims) {
       if (ims.length == 0) {
-        u('#description, #footer, iframe.video').attr('style', 'display: block;');
+        u('#description, #footer, iframe.video').addClass('show');
         return;
       }
       else {
