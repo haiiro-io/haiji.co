@@ -30,8 +30,16 @@ meta(name="robots" content="index, follow")
 link(rel="author" href="https://plus.google.com/+HaijiHaiiro")
 
 each val, index in public._data.ogp
-  meta(property= index content= val.startsWith("meta.") ? public._data.meta[val.split(".")[1]] : val )
+  if index == "og:image" && image
+    meta(property="og:image" content= image)
+  else if index == "og:url" && url
+    meta(property="og:url" content= url)
+  else
+    meta(property= index content= val.startsWith("meta.") ? public._data.meta[val.split(".")[1]] : val )
+
 meta(property="og:updated_time" content= new Date().toISOString())
 
 each val, index in public._data.twitter
   meta(property= index content= val.startsWith("meta.") ? public._data.meta[val.split(".")[1]] : val )
+
+title= title ? title + ' - ' + public._data.meta.title : public._data.meta.title
