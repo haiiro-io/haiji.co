@@ -95,6 +95,7 @@ script.
     u('#works a').on('mouseleave', function(e) {
       paintHaiiro(rects, defaultColors);
     });
+    if(!!('ontouchstart' in window)) { u('#planning-works a, #design-works a').off('mouseover mouseleave'); }
     paintHaiiro(rects, defaultColors);
     paintHaiiro(u('svg.haiiro-icon#top-icon > rect'), defaultColors);
 
