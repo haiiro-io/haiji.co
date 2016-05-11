@@ -58,7 +58,12 @@ script.
       (target == 'planning' ? plannings : designs).addClass('active');
       (target == 'planning' ? designs : plannings).removeClass('active');
     };
-    u('.tabs > a').on('click', function(e) { switchWorks(u(this).attr('id').replace('-tab-header', '').replace('-tab', '')); e.preventDefault(); });
+    u('.tabs > a').on('click', function(e) {
+      target = u(this).attr('id').replace('-tab-header', '').replace('-tab', '')
+      switchWorks(target);
+      window.location.hash = target;
+      e.preventDefault();
+    });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
     var scrollTo = function(target) {
