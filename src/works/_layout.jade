@@ -15,8 +15,7 @@ html
     #images
       .g-wide-6-24.g-1-24
       .g-wide-12-24.g-22-24
-        - for (i = 1; i <= selected.image_count; i++)
-          img(src= '../images/works/' + selected.name + '_' + i + '.jpg')
+        #image-list
         if selected.video
           iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
     #description
@@ -35,16 +34,44 @@ html
 
 script.
   (function() {
+    u('#description, #footer, iframe.video').attr('style', 'display: none;');
+    var imageLoadedCount = 0;
+    var images = []
+    for (var i = 1; i <= #{selected.image_count}; i++) {
+      var im = new Image();
+      im.onload = function() { imageLoadedCount++; };
+      im.src = '../images/works/' + '#{selected.name}' + '_' + i + '.jpg';
+      images.push(im);
+    }
+    var showImages = function(ims) {
+      if (ims.length == 0) {
+        u('#description, #footer, iframe.video').attr('style', 'display: block;');
+        return;
+      }
+      else {
+        setTimeout(function() {
+          var im = ims.shift();
+          console.log(im);
+          u('#image-list').append(u('<img />').attr('src', im.src));
+          showImages(ims);
+        }, 800);
+      }
+    };
+
     var rects = u('svg.haiiro-icon#nav-icon > rect');
     var colors = "#{selected.colors}".split(',');
     var pallet = [];
-    for (i = 0; i < rects.length; i++) {
+    for (var i = 0; i < rects.length; i++) {
       pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
     }
     var paint = function(count) {
-      if (count == 0) {
-        for (i = 0; i < rects.length; i++) u(rects.nodes[i]).attr('fill', pallet[i]);
+      if (count == 0 && imageLoadedCount == #{selected.image_count}) {
+        for (var i = 0; i < rects.length; i++) u(rects.nodes[i]).attr('fill', pallet[i]);
+        showImages(images);
         return;
+      }
+      else if (count == 0) {
+        count += 100;
       }
       setTimeout(function() {
         var i = Math.floor((Math.random() * 7));
@@ -53,5 +80,5 @@ script.
         paint(count - 1);
       }, 15);
     };
-    paint(80);
+    paint(100);
   })();
