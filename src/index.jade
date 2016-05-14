@@ -47,6 +47,9 @@
           .work-image
             a(href= '/works/' + work.name, data-colors= work.colors.join(','))
               img(src= '/images/works/' + work.name + '_1.jpg')
+              .description
+                p.title= work.title
+                p.year= work.published_year
 
 != partial('_shared/footer')
 

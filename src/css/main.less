@@ -217,17 +217,49 @@ a {
     .work-image {
       margin-top: 40px;
       text-align: center;
-      img {
-        width: 100%;
-        @media screen and (min-width: 48em) {
-          width: inherit;
-          height: 160px;
+      a {
+        img {
+          width: 100%;
+          opacity: 1;
+          @media screen and (min-width: 48em) {
+            width: inherit;
+            height: 160px;
+          }
         }
-        opacity: 1;
+        .description {
+          display: none;
+          @media screen and (min-width: 48em) {
+            display: inline-block;
+          }
+          width: 80%;
+          text-align: center;
+          cursor: default;
+          opacity: 0;
+          padding-top: 1.0em;
+          p {
+            margin: 0;
+            &.title {
+              font-size: 1.0em;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            &.year {
+              font-size: 0.75em;
+              margin-top: 0.5em;
+            }
+          }
+        }
         &:hover, &:active, &:focus {
-          opacity: 0.6;
+          .description {
+            opacity: 1;
+            transition: opacity 1s ease;
+          }
+          img {
+            opacity: 0.6;
+            transition: opacity .6s ease;
+          }
         }
-        transition: opacity .6s ease;
       }
     }
   }
