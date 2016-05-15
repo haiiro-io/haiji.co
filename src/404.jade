@@ -1,0 +1,21 @@
+#notfound
+  .title
+    | haiji404
+    br/
+    span.subtitle Not Found
+
+script.
+  (function() {
+    var resizeBanner = function() {
+      var coverHeight = window.innerHeight;
+      u('#notfound').attr('style', 'height: ' + coverHeight + 'px;');
+      var contentHeight = u('.title').size().height + u('.subtitle').size().height;
+      console
+      u('.title').attr('style', 'top: ' + (coverHeight - contentHeight)/2 + 'px;');
+    };
+    window.onresize = function() {
+      if (window.innerWidth < 768) return;
+      resizeBanner();
+    };
+    resizeBanner();
+  })();
