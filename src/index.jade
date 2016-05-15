@@ -58,11 +58,17 @@ script.
     // FIXME
     u('#footer').addClass('show');
 
+    var adjustScreenHeight = function() {
+      var expandFooterHeight = window.innerHeight - u('#nav-bar').size().height - u('#works').size().height - u('#footer').size().height;
+      u('#footer').attr('style', 'margin-top: ' + expandFooterHeight + 'px;');
+    };
+
     var plannings = u('#planning-tab, #planning-works, #planning-tab-header');
     var designs = u('#design-tab, #design-works, #design-tab-header');
     var switchWorks = function(target) {
       (target == 'planning' ? plannings : designs).addClass('active');
       (target == 'planning' ? designs : plannings).removeClass('active');
+      adjustScreenHeight();
     };
     u('.tabs > a').on('click', function(e) {
       target = u(this).attr('id').replace('-tab-header', '').replace('-tab', '')
@@ -116,6 +122,7 @@ script.
       u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
       var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
       u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
+      adjustScreenHeight();
     };
     window.onresize = function() {
       if (window.innerWidth < 768) return;
