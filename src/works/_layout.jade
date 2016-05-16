@@ -5,7 +5,7 @@ html
   - imageBaseUrl = public._data.meta.url + '/images/works/' + selected.name + '_';
   head
     != partial('../_shared/head', { title: selected.title, image: imageBaseUrl + '1.jpg', url: url } )
-  body
+  body#page-work
     #nav-bar.show
       .g-wide-6-24.g-1-4.icon
         != partial('../_shared/haiiro_icon', { size: '15', color: '#e4e4e4', id: 'nav-icon' })
@@ -36,6 +36,12 @@ html
 
 script.
   (function() {
+    var adjustScreenHeight = function() {
+      var lackHeight = window.innerHeight - u('#footer').size().top - u('#footer').size().height;
+      var footerTopPadding = lackHeight > 0 ? lackHeight : 150;
+      u('#footer').attr('style', 'padding-top: ' + footerTopPadding + 'px;');
+    };
+
     var imageLoadedCount = 0;
     var images = []
     for (var i = 1; i <= #{selected.image_count}; i++) {
@@ -47,6 +53,11 @@ script.
     var showImages = function(ims) {
       if (ims.length == 0) {
         u('#description, #footer, iframe.video').addClass('show');
+        window.onresize = function() {
+          if (window.innerWidth < 768) return;
+          adjustScreenHeight();
+        }
+        adjustScreenHeight();
         return;
       }
       else {

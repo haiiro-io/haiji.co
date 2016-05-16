@@ -97,58 +97,6 @@ a {
   }
 }
 
-#images {
-  .content-field;
-  background-color: @haiiro-background-light;
-  margin-top: 65px;
-  img {
-    width: 100%;
-    margin-top: 15px;
-    .fadein(0.8s)
-  }
-  iframe.video {
-    .default-hidden;
-    margin-top: 15px;
-    min-height: 330px;
-  }
-}
-
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.fadein(@duration) {
-  animation: fadein @duration;
-  -webkit-animation: fadein @duration;
-}
-
-#description {
-  .content-field;
-  .default-hidden;
-  background-color: @haiiro-background-dark;
-  h2 {
-    font-size: 0.9em;
-    font-weight: normal;
-    margin-top: 1.5em;
-  }
-  .content {
-    line-height: 1.8em;
-    margin-bottom: 2.0em;
-  }
-  p {
-    margin: 0.6em 0;
-    a {
-      word-wrap: break-word;
-    }
-  }
-}
-
 #cover {
   .content-field;
   background-color: @haiiro-background-dark;
@@ -290,10 +238,7 @@ a {
 }
 
 #footer {
-  .content-field;
-  .default-hidden;
-  margin-top: 100px;
-  background-color: @haiiro-background-light;
+  padding-bottom: 20px;
   p#copyright {
     color: #6b6b6b;
     font-size: 12px;
@@ -306,4 +251,61 @@ svg.haiiro-icon {
   rect {
     transition: fill .6s ease;
   }
+}
+
+body#page-work {
+  background-color: @haiiro-background-light;
+  #images {
+    .content-field;
+    margin-top: 65px;
+    img {
+      width: 100%;
+      margin-top: 15px;
+      .fadein(0.8s)
+    }
+    iframe.video {
+      .default-hidden;
+      margin-top: 15px;
+      min-height: 330px;
+    }
+  }
+  #description {
+    .default-hidden;
+    .content-field;
+    background-color: @haiiro-background-dark;
+    h2 {
+      font-size: 0.9em;
+      font-weight: normal;
+      margin-top: 1.5em;
+    }
+    .content {
+      line-height: 1.8em;
+      margin-bottom: 2.0em;
+    }
+    p {
+      margin: 0.6em 0;
+      a {
+        word-wrap: break-word;
+      }
+    }
+  }
+  #footer {
+    .default-hidden;
+    background-color: @haiiro-background-dark;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fadein(@duration) {
+  animation: fadein @duration;
+  -webkit-animation: fadein @duration;
 }

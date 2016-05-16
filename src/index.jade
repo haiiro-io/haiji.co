@@ -55,13 +55,12 @@
 
 script.
   (function() {
-    // FIXME
-    u('#footer').addClass('show');
-
     var adjustScreenHeight = function() {
       var expandFooterHeight = window.innerHeight - u('#nav-bar').size().height - u('#works').size().height - u('#footer').size().height;
-      u('#footer').attr('style', 'margin-top: ' + expandFooterHeight + 'px;');
+      var paddingFooter = expandFooterHeight > 50 ? expandFooterHeight : 50;
+      u('#footer').attr('style', 'margin-top: ' + paddingFooter + 'px;');
     };
+    adjustScreenHeight();
 
     var plannings = u('#planning-tab, #planning-works, #planning-tab-header');
     var designs = u('#design-tab, #design-works, #design-tab-header');
@@ -122,7 +121,6 @@ script.
       u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
       var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
       u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
-      adjustScreenHeight();
     };
     window.onresize = function() {
       if (window.innerWidth < 768) return;
