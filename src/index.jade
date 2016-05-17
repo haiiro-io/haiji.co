@@ -1,12 +1,3 @@
-#nav-bar
-  .g-wide-5-24.g-1-6.icon
-    != partial('_shared/haiiro_icon', { size: '15', color: '#e0559f', id: 'nav-icon' })
-  .g-wide-14-24.g-2-3
-    .tabs
-      a#planning-tab-header(href='#planning') Planning
-      a#design-tab-header(href='#design') Design
-  .g-wide-5-24.g-1-6
-
 #cover
   .g-wide-5-24.g-1-6
     != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'top-icon' })
@@ -18,9 +9,14 @@
       .occupation= public._data.meta.occupation
 
 #switcher
-  .tabs.show
-    a#planning-tab(href='#planning') Planning
-    a#design-tab(href='#design') Design
+  .tab-wrapper
+    .g-wide-5-24.g-1-6.icon
+      != partial('_shared/haiiro_icon', { size: '15', color: '#e0559f', id: 'nav-icon' })
+    .g-wide-14-24.g-2-3
+      .tabs
+        a#planning-tab(href='#planning') Planning
+        a#design-tab(href='#design') Design
+    .g-wide-5-24.g-1-6
 
 #works
   - each tag in ['planning', 'design']
@@ -56,21 +52,21 @@
 script.
   (function() {
     var adjustScreenHeight = function() {
-      var expandFooterHeight = window.innerHeight - u('#nav-bar').size().height - u('#works').size().height - u('#footer').size().height;
+      var expandFooterHeight = window.innerHeight - u('#switcher').size().height - u('#works').size().height - u('#footer').size().height;
       var paddingFooter = expandFooterHeight > 50 ? expandFooterHeight : 50;
       u('#footer').attr('style', 'margin-top: ' + paddingFooter + 'px;');
     };
     adjustScreenHeight();
 
-    var plannings = u('#planning-tab, #planning-works, #planning-tab-header');
-    var designs = u('#design-tab, #design-works, #design-tab-header');
+    var plannings = u('#planning-tab, #planning-works');
+    var designs = u('#design-tab, #design-works');
     var switchWorks = function(target) {
       (target == 'planning' ? plannings : designs).addClass('active');
       (target == 'planning' ? designs : plannings).removeClass('active');
       adjustScreenHeight();
     };
     u('.tabs > a').on('click', function(e) {
-      target = u(this).attr('id').replace('-tab-header', '').replace('-tab', '')
+      target = u(this).attr('id').replace('-tab', '')
       switchWorks(target);
       window.location.hash = target;
       e.preventDefault();
@@ -88,7 +84,7 @@ script.
         }
       }, 5);
     };
-    u('#planning-tab, #design-tab, #planning-tab-header, #design-tab-header').on('click', function() {
+    u('#planning-tab, #design-tab').on('click', function() {
       // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
       // u('#switcher').scroll();
       scrollTo('#switcher');
@@ -129,12 +125,12 @@ script.
     resizeBanner();
 
     window.addEventListener('scroll', function(e) {
-      if (window.scrollY > 100) {
-        u('#nav-bar').addClass('show');
-        u('#switcher > .tabs').removeClass('show');
+      if (window.scrollY > u('#cover').size().height) {
+        u('#switcher > .tab-wrapper').addClass('sticked');
+        u('#nav-icon').addClass('show');
       } else {
-        u('#nav-bar').removeClass('show');
-        u('#switcher > .tabs').addClass('show');
+        u('#switcher > .tab-wrapper').removeClass('sticked');
+        u('#nav-icon').removeClass('show');
       }
     });
   })();
