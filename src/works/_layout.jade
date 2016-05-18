@@ -69,6 +69,14 @@ script.
       }
     };
 
+    u('#nav-icon').on('click', function(e) {
+      if (document.referrer.startsWith(window.location.origin)) {
+        window.history.back();
+      } else {
+        window.open('/', '_self');
+      }
+    });
+
     var rects = u('svg.haiiro-icon#nav-icon > rect');
     var colors = "#{selected.colors}".split(',');
     var pallet = [];

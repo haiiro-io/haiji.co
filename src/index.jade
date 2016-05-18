@@ -112,6 +112,9 @@ script.
       // u('#switcher').scroll();
       scrollTo('#switcher');
     });
+    u('#nav-icon').on('click', function(e) {
+      scrollTo('#cover');
+    });
 
     var rects = u('svg.haiiro-icon#nav-icon > rect');
     u('#planning-works a, #design-works a').on('mouseover', function(e) {
