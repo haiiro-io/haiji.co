@@ -58,6 +58,29 @@ script.
     };
     adjustScreenHeight();
 
+    var resizeBanner = function() {
+      var coverHeight = window.innerHeight * 0.80;
+      u('#cover').attr('style', 'height: ' + coverHeight + 'px;')
+      u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
+      var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
+      u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
+    };
+    window.onresize = function() {
+      if (window.innerWidth < 768) return;
+      resizeBanner();
+    }
+
+    resizeBanner();
+    var handleHeader = function() {
+      if (window.scrollY > u('#cover').size().height) {
+        u('#switcher > .tab-wrapper').addClass('sticked');
+        u('#nav-icon').addClass('show');
+      } else {
+        u('#switcher > .tab-wrapper').removeClass('sticked');
+        u('#nav-icon').removeClass('show');
+      }
+    };
+
     var plannings = u('#planning-tab, #planning-works');
     var designs = u('#design-tab, #design-works');
     var switchWorks = function(target) {
@@ -107,30 +130,22 @@ script.
     u('#works a').on('mouseleave', function(e) {
       paintHaiiro(rects, defaultColors);
     });
-    if(!!('ontouchstart' in window)) { u('#planning-works a, #design-works a').off('mouseover mouseleave'); }
+
+    // for mobile browser
+    if(!!('ontouchstart' in window)) {
+      u('#planning-works a, #design-works a').off('mouseover mouseleave');
+
+      // the workaround for iOS which doesn't trigger scroll event while touching screen
+      var watchScroll = function() {
+        setTimeout(function() {
+          handleHeader();
+          watchScroll();
+        }, 300);
+      };
+      watchScroll();
+    }
     paintHaiiro(rects, defaultColors);
     paintHaiiro(u('svg.haiiro-icon#top-icon > rect'), defaultColors);
 
-    var resizeBanner = function() {
-      var coverHeight = window.innerHeight * 0.80;
-      u('#cover').attr('style', 'height: ' + coverHeight + 'px;')
-      u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
-      var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
-      u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
-    };
-    window.onresize = function() {
-      if (window.innerWidth < 768) return;
-      resizeBanner();
-    }
-    resizeBanner();
-
-    window.addEventListener('scroll', function(e) {
-      if (window.scrollY > u('#cover').size().height) {
-        u('#switcher > .tab-wrapper').addClass('sticked');
-        u('#nav-icon').addClass('show');
-      } else {
-        u('#switcher > .tab-wrapper').removeClass('sticked');
-        u('#nav-icon').removeClass('show');
-      }
-    });
+    window.addEventListener('scroll', function(e) { handleHeader(); });
   })();
