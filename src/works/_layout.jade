@@ -6,7 +6,7 @@ html
   head
     != partial('../_shared/head', { title: selected.title, image: imageBaseUrl + '1.jpg', url: url } )
   body#page-work
-    #nav-bar.show
+    nav#nav-bar.show
       .g-wide-6-24.g-1-4.icon
         != partial('../_shared/haiiro_icon', { size: '15', color: '#e4e4e4', id: 'nav-icon' })
       .g-wide-12-24.g-2-3
@@ -14,32 +14,33 @@ html
           p.title= selected.title
         .g-wide-1-4.g-4-24
           p.year= selected.published_year
-    #images
-      .g-wide-6-24.g-1-24
-      .g-wide-12-24.g-22-24
-        #image-list
-        if selected.video
-          iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
-    #description
-      .g-wide-6-24.g-1-24
-      .g-wide-12-24.g-11-12
-        p.content!= selected.description.replace(/\n/g, "<br />")
-        if selected.role
-          h2 My Role:
-          p= selected.role
-        if selected.link
-          h2 Related Links:
-          p
-            a(href= selected.link, target= '_blank')= selected.link
+    article
+      #images
+        .g-wide-6-24.g-1-24
+        .g-wide-12-24.g-22-24
+          #image-list
+          if selected.video
+            iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
+      #description
+        .g-wide-6-24.g-1-24
+        .g-wide-12-24.g-11-12
+          p.content!= selected.description.replace(/\n/g, "<br />")
+          if selected.role
+            h2 My Role:
+            p= selected.role
+          if selected.link
+            h2 Related Links:
+            p
+              a(href= selected.link, target= '_blank')= selected.link
 
     != partial('../_shared/footer')
 
 script.
   (function() {
     var adjustScreenHeight = function() {
-      var lackHeight = window.innerHeight - u('#footer').size().top - u('#footer').size().height;
+      var lackHeight = window.innerHeight - u('footer').size().top - u('footer').size().height;
       var footerTopPadding = lackHeight > 0 ? lackHeight : 150;
-      u('#footer').attr('style', 'padding-top: ' + footerTopPadding + 'px;');
+      u('footer').attr('style', 'padding-top: ' + footerTopPadding + 'px;');
     };
 
     var imageLoadedCount = 0;
@@ -52,7 +53,7 @@ script.
     }
     var showImages = function(ims) {
       if (ims.length == 0) {
-        u('#description, #footer, iframe.video').addClass('show');
+        u('#description, footer, iframe.video').addClass('show');
         window.onresize = function() {
           if (window.innerWidth < 768) return;
           adjustScreenHeight();
