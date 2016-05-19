@@ -136,80 +136,81 @@ article#works {
   .content-field;
   background-color: @haiiro-background-light;
   width: 100%;
-  #planning-works {
-    a {
-      display: block;
-      width: 100%;
-      &:hover {
-        background-color: @haiiro-background-dark;
-      }
-    }
-    .work {
-      height: 60px;
-      line-height: 60px;
-      font-size: 1.0em;
-      .title {
-        text-align: left;
-      }
-      .year {
-        text-align: right;
-      }
-    }
-  }
-  #design-works {
-    .work-image {
-      margin-top: 40px;
-      text-align: center;
-      a {
-        img {
-          width: 100%;
-          opacity: 1;
-          @media screen and (min-width: 48em) {
-            width: inherit;
-            height: 160px;
-          }
-        }
-        .description {
-          display: none;
-          @media screen and (min-width: 48em) {
-            display: inline-block;
-          }
-          width: 80%;
-          text-align: center;
-          cursor: default;
-          opacity: 0;
-          padding-top: 1.0em;
-          p {
-            margin: 0;
-            &.title {
-              font-size: 1.0em;
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-            &.year {
-              font-size: 0.75em;
-              margin-top: 0.5em;
-            }
-          }
-        }
-        &:hover, &:active, &:focus {
-          .description {
-            opacity: 1;
-            transition: opacity 1s ease;
-          }
-          img {
-            opacity: 0.6;
-            transition: opacity .6s ease;
-          }
-        }
-      }
-    }
-  }
-  .filtered-works {
+
+  section {
     display: none;
     &.active {
       display: block;
+    }
+    &#planning-works {
+      a {
+        display: block;
+        width: 100%;
+        &:hover {
+          background-color: @haiiro-background-dark;
+        }
+      }
+      .work {
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.0em;
+        .title {
+          text-align: left;
+        }
+        .year {
+          text-align: right;
+        }
+      }
+    }
+    &#design-works {
+      .work-image {
+        margin-top: 40px;
+        text-align: center;
+        a {
+          img {
+            width: 100%;
+            opacity: 1;
+            @media screen and (min-width: 48em) {
+              width: inherit;
+              height: 160px;
+            }
+          }
+          .description {
+            display: none;
+            @media screen and (min-width: 48em) {
+              display: inline-block;
+            }
+            width: 80%;
+            text-align: center;
+            cursor: default;
+            opacity: 0;
+            padding-top: 1.0em;
+            p {
+              margin: 0;
+              &.title {
+                font-size: 1.0em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              &.year {
+                font-size: 0.75em;
+                margin-top: 0.5em;
+              }
+            }
+          }
+          &:hover, &:active, &:focus {
+            .description {
+              opacity: 1;
+              transition: opacity 1s ease;
+            }
+            img {
+              opacity: 0.6;
+              transition: opacity .6s ease;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -267,37 +268,38 @@ body#page-work {
     }
   }
   article {
-    #images {
+    section {
       .content-field;
-      margin-top: 65px;
-      img {
-        width: 100%;
-        margin-top: 15px;
-        .fadein(0.8s)
+      &#images {
+        margin-top: 65px;
+        img {
+          width: 100%;
+          margin-top: 15px;
+          .fadein(0.8s)
+        }
+        iframe.video {
+          .default-hidden;
+          margin-top: 15px;
+          min-height: 330px;
+        }
       }
-      iframe.video {
+      &#description {
         .default-hidden;
-        margin-top: 15px;
-        min-height: 330px;
-      }
-    }
-    #description {
-      .default-hidden;
-      .content-field;
-      background-color: @haiiro-background-dark;
-      h2 {
-        font-size: 0.9em;
-        font-weight: normal;
-        margin-top: 1.5em;
-      }
-      .content {
-        line-height: 1.8em;
-        margin-bottom: 2.0em;
-      }
-      p {
-        margin: 0.6em 0;
-        a {
-          word-wrap: break-word;
+        background-color: @haiiro-background-dark;
+        h2 {
+          font-size: 0.9em;
+          font-weight: normal;
+          margin-top: 1.5em;
+        }
+        .content {
+          line-height: 1.8em;
+          margin-bottom: 2.0em;
+        }
+        p {
+          margin: 0.6em 0;
+          a {
+            word-wrap: break-word;
+          }
         }
       }
     }
