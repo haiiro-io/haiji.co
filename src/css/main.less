@@ -167,12 +167,14 @@ article#works {
         margin-top: 10px;
         padding: 20px 0 15px 0;
         text-align: center;
-        &:hover, &:active, &:focus {
-          background-color: #ddd;
-          transition: background-color 1s ease;
-          a > .description {
-            opacity: 1;
-            transition: opacity 1s ease;
+        @media screen and (min-width: 48em) {
+          &:hover, &:active, &:focus {
+            background-color: #ddd;
+            transition: background-color 1s ease;
+            a > .description {
+              opacity: 1;
+              transition: opacity 1s ease;
+            }
           }
         }
         a {
