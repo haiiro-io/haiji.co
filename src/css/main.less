@@ -168,12 +168,11 @@ article#works {
         padding: 20px 0 15px 0;
         text-align: center;
         @media screen and (min-width: 48em) {
+          transition: background-color 0.5s ease;
           &:hover, &:active, &:focus {
             background-color: #ddd;
-            transition: background-color 1s ease;
             a > .description {
               opacity: 1;
-              transition: opacity 1s ease;
             }
           }
         }
@@ -189,6 +188,7 @@ article#works {
             width: 90%;
             padding-top: 0.75em;
             opacity: 0;
+            transition: opacity 0.5s ease;
             text-align: center;
             display: none;
             @media screen and (min-width: 48em) {
