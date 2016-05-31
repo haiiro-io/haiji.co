@@ -120,10 +120,14 @@ script.
       scrollTo('#switcher');
     });
     u('#nav-icon').on('click', function(e) {
-      scrollTo('#cover');
+      if (window.scrollY > 0) {
+        scrollTo('#cover');
+      } else {
+        u('.myself > .name > a').trigger('click');
+      }
     });
 
-    var hookPaintings = u('a.paint');
+    var hookPaintings = u('a.paint, svg.haiiro-icon#nav-icon');
     var rects = u('svg.haiiro-icon#nav-icon > rect');
     hookPaintings.on('mouseover', function(e) {
       var colors = u(this).data('colors').split(',');
@@ -132,7 +136,6 @@ script.
         pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
       }
       paintHaiiro(rects, pallet);
-      paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), pallet);
     });
     var paintHaiiro = function(rects, colors) {
       if (colors.length != 7) return;
@@ -141,7 +144,6 @@ script.
     var defaultColors = ['#d4d4d4', '#a7a7a7', '#cfcfcf', '#d7d7d7', '#cdcdcd', '#c7c7c7', '#d1d1d1'];
     hookPaintings.on('mouseleave', function(e) {
       paintHaiiro(rects, defaultColors);
-      paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), defaultColors);
     });
 
     // for mobile browser
@@ -158,7 +160,6 @@ script.
       watchScroll();
     }
     paintHaiiro(rects, defaultColors);
-    paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), defaultColors);
 
     window.addEventListener('scroll', function(e) { handleHeader(); });
   })();
