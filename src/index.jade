@@ -1,6 +1,6 @@
 #cover
   .g-wide-5-24.g-1-6
-    != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'top-icon' })
+    != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'nav-icon' })
   .g-wide-19-24.g-10-12
   .g-wide-5-24.g-1-24
   .g-wide-14-24.g-11-12
@@ -11,8 +11,7 @@
 
 nav#switcher
   .tab-wrapper
-    .g-wide-5-24.g-1-6.icon
-      != partial('_shared/haiiro_icon', { size: '15', color: '#e0559f', id: 'nav-icon' })
+    .g-wide-5-24.g-1-6
     .g-wide-14-24.g-2-3
       .tabs
         a#planning-tab(href='#planning') Planning
@@ -79,15 +78,15 @@ script.
         u('#switcher > .tab-wrapper').removeClass('sticked');
       }
 
-      if (window.scrollY > u('#cover').size().height - 90) {
-        u('#top-icon').removeClass('show');
-        u('#nav-icon').addClass('show');
+      if (window.scrollY > u('#cover').size().height - 45) {
+        u('#nav-icon').attr('viewBox', '0 0 181.8 180');
+        u('#nav-icon').attr('style', 'top: 10px');
       } else {
-        u('#nav-icon').removeClass('show');
-        u('#top-icon').addClass('show');
+        u('#nav-icon').attr('style', 'top: 20px');
+        u('#nav-icon').attr('viewBox', '0 0 90.9 90');
       }
     };
-    u('#top-icon').addClass('show');
+    u('#nav-icon').addClass('show');
 
     var plannings = u('#planning-tab, section#planning-works');
     var designs = u('#design-tab, section#design-works');
@@ -133,7 +132,7 @@ script.
         pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
       }
       paintHaiiro(rects, pallet);
-      paintHaiiro(u('#cover svg.haiiro-icon#top-icon > rect'), pallet);
+      paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), pallet);
     });
     var paintHaiiro = function(rects, colors) {
       if (colors.length != 7) return;
@@ -142,7 +141,7 @@ script.
     var defaultColors = ['#d4d4d4', '#a7a7a7', '#cfcfcf', '#d7d7d7', '#cdcdcd', '#c7c7c7', '#d1d1d1'];
     hookPaintings.on('mouseleave', function(e) {
       paintHaiiro(rects, defaultColors);
-      paintHaiiro(u('#cover svg.haiiro-icon#top-icon > rect'), defaultColors);
+      paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), defaultColors);
     });
 
     // for mobile browser
@@ -159,7 +158,7 @@ script.
       watchScroll();
     }
     paintHaiiro(rects, defaultColors);
-    paintHaiiro(u('#cover svg.haiiro-icon#top-icon > rect'), defaultColors);
+    paintHaiiro(u('#cover svg.haiiro-icon#nav-icon > rect'), defaultColors);
 
     window.addEventListener('scroll', function(e) { handleHeader(); });
   })();
