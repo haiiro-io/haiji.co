@@ -40,11 +40,13 @@ a {
 }
 
 #cover {
-  .content-field;
   background-color: @haiiro-background-dark;
   min-height: 350px;
-  svg.haiiro-icon {
+  svg.haiiro-icon#top-icon {
+    position: fixed;
+    top: 20px;
     margin-left: 20px;
+    .default-hidden;
   }
   .myself {
     .name {

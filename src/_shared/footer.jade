@@ -9,9 +9,9 @@ footer
       | .
       br/
       | Lovingly made by&nbsp;
-      a(href= public._data.meta.profile_url, target= '_blank') Haiji
+      a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(',') target= '_blank') Haiji
       | &nbsp;&amp;&nbsp;
-      a(href= 'http://hmsk.me', target= '_blank') hmsk
+      a.paint(href= 'http://hmsk.me', data-colors= public._data.meta.hmsk_colors.join(','), target= '_blank') hmsk
       | .
 
 script.

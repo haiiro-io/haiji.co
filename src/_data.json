@@ -8,7 +8,9 @@
     "description": "The portfolio website of Haiji Haiiro who is a plannner and an UI/UX designer in Tokyo, Japan.",
     "image_url": "http://pre.haiji.co/images/ogp_1200x630.jpg",
     "copyright": "Haiji Haiiro",
-    "profile_url": "http://haiiro.haiji.co"
+    "profile_url": "http://haiiro.haiji.co",
+    "profile_colors": ["#999", "#999", "#999"],
+    "hmsk_colors": ["#ccc", "#325d72", "#999"]
   },
   "ogp": {
     "og:url": "meta.url",
