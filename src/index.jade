@@ -5,7 +5,8 @@
   .g-wide-5-24.g-1-24
   .g-wide-14-24.g-11-12
     .myself
-      .name= public._data.meta.copyright
+      .name
+        a(href=public._data.meta.profile_url, target='_blank')= public._data.meta.copyright
       .occupation= public._data.meta.occupation
 
 nav#switcher

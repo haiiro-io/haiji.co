@@ -7,7 +7,8 @@
     "short_description": "Planning/Design works by Haiji Haiiro",
     "description": "The portfolio website of Haiji Haiiro who is a plannner and an UI/UX designer in Tokyo, Japan.",
     "image_url": "http://pre.haiji.co/images/ogp_1200x630.jpg",
-    "copyright": "Haiji Haiiro"
+    "copyright": "Haiji Haiiro",
+    "profile_url": "http://haiiro.haiji.co"
   },
   "ogp": {
     "og:url": "meta.url",

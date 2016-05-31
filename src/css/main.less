@@ -32,15 +32,12 @@ a {
   padding: 20px 0;
 }
 
-
 .default-hidden {
   display: none;
   &.show {
     display: block;
   }
 }
-
-
 
 #cover {
   .content-field;
@@ -51,6 +48,10 @@ a {
   }
   .myself {
     .name {
+      a {
+        color: @base-font-color;
+        &:hover { color: #999; }
+      }
       font-size: 3.5em;
       @media screen and (min-width: 48em) {
         font-size: 4.0em;
