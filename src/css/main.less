@@ -28,6 +28,13 @@ a {
   &:hover, &:active, &:focus { color: #333; }
 }
 
+svg.haiiro-icon {
+  cursor: pointer;
+  rect {
+    transition: fill .6s ease;
+  }
+}
+
 .content-field {
   padding: 20px 0;
 }
@@ -45,9 +52,8 @@ a {
   svg.haiiro-icon#nav-icon {
     position: fixed;
     top: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     z-index: 300;
-    cursor: pointer;
   }
   .myself {
     .name {
@@ -95,18 +101,6 @@ nav#switcher {
   text-align: center;
   background-color: @haiiro-background-dark;
   border-bottom: 1px solid @haiiro-section-border;
-  .icon {
-    text-align: left;
-    svg {
-      cursor: pointer;
-      display: none;
-      padding-top: 10px;
-      padding-left: 10px;
-      &.show {
-        display: inline;
-      }
-    }
-  }
   .tab-wrapper {
     height: 65px;
     width: 100%;
@@ -230,11 +224,6 @@ footer {
   }
 }
 
-svg.haiiro-icon {
-  rect {
-    transition: fill .6s ease;
-  }
-}
 
 body#page-work {
   background-color: @haiiro-background-light;
@@ -256,8 +245,7 @@ body#page-work {
       margin-top: 10px;
     }
     .haiiro-icon {
-      cursor: pointer;
-      margin-left: 10px;
+      margin-left: 20px;
     }
     p {
       margin: 0;
