@@ -73,6 +73,12 @@ script.
     resizeBanner();
     var handleHeader = function() {
       var scrolled = window.scrollY;
+      if (scrolled > 0) {
+        u('#nav-icon').data('colors', ["#ccc", "#ccc", "#ccc"].join(','));
+      } else {
+        u('#nav-icon').data('colors', "#{public._data.meta.profile_colors.join(',')}");
+      }
+
       if (scrolled > u('#cover').size().height) {
         u('#switcher > .tab-wrapper').addClass('sticked');
       } else {
