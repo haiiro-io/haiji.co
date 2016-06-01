@@ -72,15 +72,22 @@ script.
 
     resizeBanner();
     var handleHeader = function() {
-      if (window.scrollY > u('#cover').size().height) {
+      var scrolled = window.scrollY;
+      if (scrolled > u('#cover').size().height) {
         u('#switcher > .tab-wrapper').addClass('sticked');
       } else {
         u('#switcher > .tab-wrapper').removeClass('sticked');
       }
 
-      if (window.scrollY > u('#cover').size().height - 45) {
-        u('#nav-icon').attr('style', 'top: 10px');
-        u('#nav-icon').attr('viewBox', '0 0 186 180');
+      if (scrolled > u('#cover').size().height - 90) {
+        var rest = u('#cover').size().height - scrolled
+        if (rest < 0) rest = 0;
+        var w = 186 - 93 * rest / 90;
+        var h = 180 - 90 * rest / 90;
+        var t = 10 +  10 * rest / 90;
+
+        u('#nav-icon').attr('style', 'top: ' + t + 'px');
+        u('#nav-icon').attr('viewBox', '0 0 ' + w + ' ' + h);
       } else {
         u('#nav-icon').attr('style', 'top: 20px');
         u('#nav-icon').attr('viewBox', '0 0 93 90');
