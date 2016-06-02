@@ -74,8 +74,8 @@ script.
       if (window.innerWidth < 768) return;
       resizeBanner();
     }
-
     resizeBanner();
+
     var handleHeader = function() {
       var scrolled = window.scrollY;
       if (scrolled > 0) {
@@ -98,6 +98,7 @@ script.
         u('#nav-icon').attr('viewBox', '0 0 93 90');
       }
     }
+    window.addEventListener('scroll', function(e) { handleHeader(); });
 
     var plannings = u('#planning-tab, section#planning-works');
     var designs = u('#design-tab, section#design-works');
@@ -156,21 +157,10 @@ script.
     hookPaintings.on('mouseleave', function(e) {
       paintHaiiro(rects, defaultColors);
     });
+    paintHaiiro(rects, defaultColors);
 
     // for mobile browser
     if(!!('ontouchstart' in window)) {
       hookPaintings.off('mouseover mouseleave');
-
-      // the workaround for iOS which doesn't trigger scroll event while touching screen
-      var watchScroll = function() {
-        setTimeout(function() {
-          handleHeader();
-          watchScroll();
-        }, 300);
-      };
-      watchScroll();
     }
-    paintHaiiro(rects, defaultColors);
-
-    window.addEventListener('scroll', function(e) { handleHeader(); });
   })();
