@@ -126,10 +126,11 @@ script.
         }
       }, 5);
     };
-    u('#planning-tab, #design-tab').on('click', function() {
+    u('#planning-tab, #design-tab').on('click', function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
       // u('#switcher').scroll();
       scrollTo('#switcher');
+      event.preventDefault();
     });
     u('#nav-icon').on('click', function(e) {
       if (window.scrollY > 0) {
