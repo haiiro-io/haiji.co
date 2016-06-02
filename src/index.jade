@@ -100,21 +100,6 @@ script.
     }
     window.addEventListener('scroll', function(e) { handleHeader(); });
 
-    var plannings = u('#planning-tab, section#planning-works');
-    var designs = u('#design-tab, section#design-works');
-    var switchWorks = function(target) {
-      (target == 'planning' ? plannings : designs).addClass('active');
-      (target == 'planning' ? designs : plannings).removeClass('active');
-      adjustScreenHeight();
-    };
-    u('.tabs > a').on('click', function(e) {
-      target = u(this).attr('id').replace('-tab', '')
-      switchWorks(target);
-      window.location.hash = target;
-      e.preventDefault();
-    });
-    switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
-
     var scrollTo = function(target) {
       setTimeout(function() {
         var direction = u(target).nodes[0].offsetTop < document.body.scrollTop ? -1 : 1;
@@ -126,12 +111,6 @@ script.
         }
       }, 5);
     };
-    u('#planning-tab, #design-tab').on('click', function(event) {
-      // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
-      // u('#switcher').scroll();
-      scrollTo('#switcher');
-      event.preventDefault();
-    });
     u('#nav-icon').on('click', function(e) {
       if (window.scrollY > 0) {
         scrollTo('#cover');
@@ -139,6 +118,24 @@ script.
         u('.myself > .name > a').trigger('click');
       }
     });
+    var plannings = u('#planning-tab, section#planning-works');
+    var designs = u('#design-tab, section#design-works');
+    var switchWorks = function(target) {
+      (target == 'planning' ? plannings : designs).addClass('active');
+      (target == 'planning' ? designs : plannings).removeClass('active');
+      adjustScreenHeight();
+    };
+    u('.tabs > a').on('click', function(event) {
+      target = u(this).attr('id').replace('-tab', '')
+      switchWorks(target);
+      window.location.hash = target;
+      
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
+      // u('#switcher').scroll();
+      scrollTo('#switcher');
+      event.preventDefault();
+    });
+    switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
 
     var hookPaintings = u('a.paint, svg.haiiro-icon#nav-icon');
     var rects = u('svg.haiiro-icon#nav-icon > rect');
