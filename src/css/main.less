@@ -100,19 +100,26 @@ svg.haiiro-icon {
     position: sticky;
     top: 0;
 }
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
 
 nav#switcher {
   height: 65px;
   width: 100%;
   text-align: center;
-  background-color: @haiiro-background-dark;
-  border-bottom: 1px solid @haiiro-section-border;
   .tab-wrapper {
     height: 65px;
     width: 100%;
+    z-index: 200;
     background-color: @haiiro-background-dark;
     border-bottom: 1px solid @haiiro-section-border;
-    z-index: 200;
+    &.sticked {
+      top: 0;
+      position: fixed;
+    }
     .tabs {
       line-height: 64px;
       a {

@@ -51,9 +51,13 @@ article#works
 
 script.
   (function() {
-    var stickyElements = document.getElementsByClassName('sticky');
-    for (var i = stickyElements.length - 1; i >= 0; i--) {
+    var stickWithPositionFixed = true;
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+      stickWithPositionFixed = false;
+      var stickyElements = document.getElementsByClassName('sticky');
+      for (var i = stickyElements.length - 1; i >= 0; i--) {
         Stickyfill.add(stickyElements[i]);
+      }
     }
 
     var adjustScreenHeight = function() {
@@ -96,6 +100,14 @@ script.
       } else {
         u('#nav-icon').attr('style', 'top: 20px');
         u('#nav-icon').attr('viewBox', '0 0 93 90');
+      }
+
+      if (stickWithPositionFixed) {
+        if (scrolled > u('#cover').size().height) {
+          u('#switcher > .tab-wrapper').addClass('sticked');
+        } else {
+          u('#switcher > .tab-wrapper').removeClass('sticked');
+        }
       }
     }
     window.addEventListener('scroll', function(e) { handleHeader(); });
