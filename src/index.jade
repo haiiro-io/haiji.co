@@ -9,7 +9,7 @@
         a.paint(href= public._data.meta.profile_url, data-colors= '#999,#999,#999', target= '_blank')= public._data.meta.copyright
       .occupation= public._data.meta.occupation
 
-nav#switcher
+nav#switcher.sticky
   .tab-wrapper
     .g-wide-5-24.g-1-6
     .g-wide-14-24.g-2-3
@@ -51,6 +51,11 @@ article#works
 
 script.
   (function() {
+    var stickyElements = document.getElementsByClassName('sticky');
+    for (var i = stickyElements.length - 1; i >= 0; i--) {
+        Stickyfill.add(stickyElements[i]);
+    }
+
     var adjustScreenHeight = function() {
       var expandFooterHeight = window.innerHeight - u('nav#switcher').size().height - u('article#works').size().height - u('footer').size().height;
       var paddingFooter = expandFooterHeight > 50 ? expandFooterHeight : 50;
@@ -77,12 +82,6 @@ script.
         u('#nav-icon').data('colors', ["#ccc", "#ccc", "#ccc"].join(','));
       } else {
         u('#nav-icon').data('colors', "#{public._data.meta.profile_colors.join(',')}");
-      }
-
-      if (scrolled > u('#cover').size().height) {
-        u('#switcher > .tab-wrapper').addClass('sticked');
-      } else {
-        u('#switcher > .tab-wrapper').removeClass('sticked');
       }
 
       if (scrolled > u('#cover').size().height - 90) {

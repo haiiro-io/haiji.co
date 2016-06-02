@@ -95,6 +95,12 @@ svg.haiiro-icon {
   }
 }
 
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 nav#switcher {
   height: 65px;
   width: 100%;
@@ -104,13 +110,9 @@ nav#switcher {
   .tab-wrapper {
     height: 65px;
     width: 100%;
-    &.sticked {
-      top: 0;
-      position: fixed;
-      background-color: @haiiro-background-dark;
-      border-bottom: 1px solid @haiiro-section-border;
-      z-index: 200;
-    }
+    background-color: @haiiro-background-dark;
+    border-bottom: 1px solid @haiiro-section-border;
+    z-index: 200;
     .tabs {
       line-height: 64px;
       a {
