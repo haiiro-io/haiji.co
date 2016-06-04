@@ -1,8 +1,8 @@
 doctype html
 html
   - selected = public.works._data.find(function (w) { return w.name == current.source; } );
-  - url = public._data.meta.url + '/works/' + selected.name;
-  - imageBaseUrl = public._data.meta.url + '/images/works/' + selected.name + '_';
+  - url = '/works/' + selected.name;
+  - imageBaseUrl = '/images/works/' + selected.name + '_';
   head
     != partial('../_shared/head', { title: selected.title, image: imageBaseUrl + '1.jpg', url: url } )
   body#page-work
