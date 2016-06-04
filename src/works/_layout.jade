@@ -78,11 +78,19 @@ script.
       }
     });
 
-    h = new HaiiroIcon('nav-icon', "#{public._data.meta.default_icon_colors.join(",")}".split(","));
+    h = new HaiiroIcon('nav-icon', "#{selected.colors.join(",")}".split(","));
     h.randomPaintStart("#{selected.colors}".split(','), function() {
       return imageLoadedCount == #{selected.image_count};
     }, function() {
       showImages(images);
     });
 
+    hookPaintings = u('a.paint, svg.haiiro-icon#nav-icon');
+    hookPaintings.on('mouseover', function(e) {
+      h.paint(u(this).data('colors').split(','));
+    }).on('mouseleave', function(e) {
+      h.paintWithDefault();
+    });
+    // for mobile browser
+    if (!!('ontouchstart' in window)) hookPaintings.off('mouseover mouseleave')
   })();
