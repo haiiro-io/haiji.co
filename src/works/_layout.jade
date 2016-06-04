@@ -78,27 +78,11 @@ script.
       }
     });
 
-    var rects = u('svg.haiiro-icon#nav-icon > rect');
-    var colors = "#{selected.colors}".split(',');
-    var pallet = [];
-    for (var i = 0; i < rects.length; i++) {
-      pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
-    }
-    var paint = function(count) {
-      if (count == 0 && imageLoadedCount == #{selected.image_count}) {
-        for (var i = 0; i < rects.length; i++) u(rects.nodes[i]).attr('fill', pallet[i]);
-        showImages(images);
-        return;
-      }
-      else if (count == 0) {
-        count += 100;
-      }
-      setTimeout(function() {
-        var i = Math.floor((Math.random() * 7));
-        var j = Math.floor((Math.random() * 7));
-        u(rects.nodes[i]).attr('fill', pallet[j]);
-        paint(count - 1);
-      }, 15);
-    };
-    paint(100);
+    h = new HaiiroIcon('nav-icon', "#{public._data.meta.default_icon_colors.join(",")}".split(","));
+    h.randomPaintStart("#{selected.colors}".split(','), function() {
+      return imageLoadedCount == #{selected.image_count};
+    }, function() {
+      showImages(images);
+    });
+
   })();
