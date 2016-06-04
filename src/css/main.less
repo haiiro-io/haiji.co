@@ -127,6 +127,7 @@ nav#switcher {
         display: inline-block;
         font-size: 1.1em;
         margin-left: 1.4em;
+        transition: color 0.3s ease;
         @media screen and (min-width: 48em) {
           font-size: 1.3em;
           margin-left: 2.0em;
@@ -134,6 +135,7 @@ nav#switcher {
         &:first-child { margin-left: 0; }
         &.active {
           color: @text-emphasize-color;
+          transition: color 0.8s ease, border-bottom .2s;
           border-bottom: 2px solid @text-emphasize-color;
         }
       }
@@ -148,6 +150,7 @@ article#works {
 
   section {
     display: none;
+    .fadein(0.8s);
     &.active {
       display: block;
     }
