@@ -148,29 +148,14 @@ script.
       event.preventDefault();
     });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
-
-    var hookPaintings = u('a.paint, svg.haiiro-icon#nav-icon');
-    var rects = u('svg.haiiro-icon#nav-icon > rect');
+    
+    h = new HaiiroIcon('nav-icon', "#{public._data.meta.default_icon_colors.join(",")}".split(","));
+    hookPaintings = u('a.paint, svg.haiiro-icon#nav-icon');
     hookPaintings.on('mouseover', function(e) {
-      var colors = u(this).data('colors').split(',');
-      var pallet = [];
-      for (i = 0; i < rects.length; i++) {
-        pallet.push(colors.length > i ? colors[i] : (colors[i - colors.length] ? colors[i - colors.length] : colors[1]));
-      }
-      paintHaiiro(rects, pallet);
+      h.paint(u(this).data('colors').split(','));
+    }).on('mouseleave', function(e) {
+      h.paintWithDefault();
     });
-    var paintHaiiro = function(rects, colors) {
-      if (colors.length != 7) return;
-      for (i = 0; i < rects.length; i++) { u(rects.nodes[i]).attr('fill', colors[i]); }
-    }
-    var defaultColors = ['#d4d4d4', '#a7a7a7', '#cfcfcf', '#d7d7d7', '#cdcdcd', '#c7c7c7', '#d1d1d1'];
-    hookPaintings.on('mouseleave', function(e) {
-      paintHaiiro(rects, defaultColors);
-    });
-    paintHaiiro(rects, defaultColors);
-
     // for mobile browser
-    if(!!('ontouchstart' in window)) {
-      hookPaintings.off('mouseover mouseleave');
-    }
+    if (!!('ontouchstart' in window)) hookPaintings.off('mouseover mouseleave') 
   })();
