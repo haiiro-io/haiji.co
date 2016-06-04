@@ -63,16 +63,16 @@ script.
     var adjustScreenHeight = function() {
       var expandFooterHeight = window.innerHeight - u('nav#switcher').size().height - u('article#works').size().height - u('footer').size().height;
       var paddingFooter = expandFooterHeight > 50 ? expandFooterHeight : 50;
-      u('footer').attr('style', 'margin-top: ' + paddingFooter + 'px;');
+      u('footer').attr('style', 'margin-top: ' + Math.floor(paddingFooter) + 'px;');
     };
     adjustScreenHeight();
 
     var resizeBanner = function() {
       var coverHeight = window.innerHeight * 0.80;
-      u('#cover').attr('style', 'height: ' + coverHeight + 'px;')
-      u('body').attr('style', 'min-height: ' + coverHeight * 2 + 'px;');
+      u('#cover').attr('style', 'height: ' + Math.floor(coverHeight) + 'px;')
+      u('body').attr('style', 'min-height: ' + Math.floor(coverHeight * 2) + 'px;');
       var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
-      u('.myself').attr('style', 'margin-top: ' + nameMargin + 'px;');
+      u('.myself').attr('style', 'margin-top: ' + Math.floor(nameMargin) + 'px;');
     };
     window.onresize = function() {
       if (window.innerWidth < 768) return;
