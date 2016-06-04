@@ -26,10 +26,10 @@ html
         .g-wide-12-24.g-11-12
           p.content!= selected.description.replace(/\n/g, "<br />")
           if selected.role
-            h2 My Role:
+            h2 Role:
             p= selected.role
           if selected.link
-            h2 Related Links:
+            h2 Link:
             p
               a(href= selected.link, target= '_blank')= selected.link
 
