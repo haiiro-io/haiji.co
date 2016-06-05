@@ -6,7 +6,7 @@
   .g-wide-14-24.g-11-12
     .myself
       .name
-        a.paint(href= public._data.meta.profile_url, data-colors= '#999,#999,#999', target= '_blank')= public._data.meta.copyright
+        a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')= public._data.meta.copyright
       .occupation= public._data.meta.occupation
 
 nav#switcher.sticky
@@ -83,7 +83,7 @@ script.
     var handleHeader = function() {
       var scrolled = window.scrollY;
       if (scrolled > 0) {
-        u('#nav-icon').data('colors', ["#ccc", "#ccc", "#ccc"].join(','));
+        u('#nav-icon').data('colors', "#{public._data.meta.upper_scrollable_colors.join(',')}");
       } else {
         u('#nav-icon').data('colors', "#{public._data.meta.profile_colors.join(',')}");
       }
