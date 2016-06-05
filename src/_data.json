@@ -10,8 +10,8 @@
     "copyright": "Haiji Haiiro",
     "profile_url": "http://haiiro.haiji.co",
     "default_icon_colors": ["#d4d4d4", "#a7a7a7", "#cfcfcf", "#d7d7d7", "#cdcdcd", "#c7c7c7", "#d1d1d1"],
-    "profile_colors": ["#999", "#999", "#999"],
-    "upper_scrollable_colors": ["#ccc", "#ccc", "#ccc"],
+    "profile_colors": ["#999"],
+    "upper_scrollable_colors": ["#ccc"],
     "hmsk_colors": ["#ccc", "#325d72", "#999"]
   },
   "ogp": {
