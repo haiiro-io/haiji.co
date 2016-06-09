@@ -10,13 +10,9 @@
       .occupation= public._data.meta.occupation
 
 nav#switcher.sticky
-  .tab-wrapper
-    .g-wide-5-24.g-1-6
-    .g-wide-14-24.g-2-3
-      .tabs
-        a#planning-tab(href='#planning') Planning
-        a#design-tab(href='#design') Design
-    .g-wide-5-24.g-1-6
+  .tabs
+    .tab#planning-tab Planning
+    .tab#design-tab Design
 
 article#works
   - each tag in ['planning', 'design']
@@ -104,9 +100,9 @@ script.
 
       if (stickWithPositionFixed) {
         if (scrolled > u('#cover').size().height) {
-          u('#switcher > .tab-wrapper').addClass('sticked');
+          u('#switcher > .tabs').addClass('sticked');
         } else {
-          u('#switcher > .tab-wrapper').removeClass('sticked');
+          u('#switcher > .tabs').removeClass('sticked');
         }
       }
     }
@@ -137,7 +133,7 @@ script.
       (target == 'planning' ? designs : plannings).removeClass('active');
       adjustScreenHeight();
     };
-    u('.tabs > a').on('click', function(event) {
+    u('.tab').on('click', function(event) {
       target = u(this).attr('id').replace('-tab', '')
       switchWorks(target);
       window.location.hash = target;
@@ -145,7 +141,6 @@ script.
       // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility
       // u('#switcher').scroll();
       scrollTo('#switcher');
-      event.preventDefault();
     });
     switchWorks(window.location.hash == '#design' ? 'design' : 'planning');
     

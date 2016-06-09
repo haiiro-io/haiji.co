@@ -107,37 +107,42 @@ svg.haiiro-icon {
 }
 
 nav#switcher {
-  height: 65px;
   width: 100%;
-  text-align: center;
-  .tab-wrapper {
-    height: 65px;
+  height: 65px;
+  border-bottom: 1px solid @haiiro-section-border;
+  background-color: @haiiro-background-dark;
+  z-index: 200;
+  .tabs {
     width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
     z-index: 200;
-    background-color: @haiiro-background-dark;
     border-bottom: 1px solid @haiiro-section-border;
+    background-color: @haiiro-background-dark;
     &.sticked {
       top: 0;
       position: fixed;
     }
-    .tabs {
+    & > .tab {
+      height: 64px;
       line-height: 64px;
-      a {
-        height: 64px;
-        display: inline-block;
-        font-size: 1.1em;
-        margin-left: 1.4em;
-        transition: color 0.3s ease;
-        @media screen and (min-width: 48em) {
-          font-size: 1.3em;
-          margin-left: 2.0em;
-        }
-        &:first-child { margin-left: 0; }
-        &.active {
-          color: @text-emphasize-color;
-          transition: color 0.8s ease, border-bottom .2s;
-          border-bottom: 2px solid @text-emphasize-color;
-        }
+      cursor: pointer;
+      min-width: 85px;
+      text-align: center;
+      transition: color 0.3s ease;
+      border-bottom: 2px solid transparent;
+      font-size: 1.1em;
+      @media screen and (min-width: 48em) {
+        font-size: 1.3em;
+        margin: 0 10px;
+        min-width: 110px;
+      }
+      color: #999;
+      &:hover { color: #333; }
+      &.active {
+        color: @text-emphasize-color;
+        border-bottom: 2px solid @text-emphasize-color;
       }
     }
   }
