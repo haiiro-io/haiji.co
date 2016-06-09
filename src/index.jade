@@ -1,14 +1,9 @@
 #cover
-  .g-wide-5-24.g-1-6
-    != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'nav-icon' })
-  .g-wide-19-24.g-10-12
-  .g-wide-5-24.g-1-24
-  .g-wide-14-24.g-11-12
-    .myself
-      .name
-        a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')= public._data.meta.copyright
-      .occupation= public._data.meta.occupation
-
+  .myself
+    .name
+      a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')= public._data.meta.copyright
+    .occupation= public._data.meta.occupation
+  != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'nav-icon' })
 nav#switcher.sticky
   .tabs
     .tab#planning-tab Planning
@@ -67,8 +62,6 @@ script.
       var coverHeight = window.innerHeight * 0.80;
       u('#cover').attr('style', 'height: ' + Math.floor(coverHeight) + 'px;')
       u('body').attr('style', 'min-height: ' + Math.floor(coverHeight * 2) + 'px;');
-      var nameMargin = (u('#cover').size().height - u('.myself').size().height) / 2 - u('svg.haiiro-icon').parent().size().height;
-      u('.myself').attr('style', 'margin-top: ' + Math.floor(nameMargin) + 'px;');
     };
     window.onresize = function() {
       if (window.innerWidth < 768) return;
