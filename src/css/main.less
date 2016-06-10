@@ -81,20 +81,19 @@ svg.haiiro-icon {
 }
 
 #notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: @haiiro-background-dark;
+  text-align: center;
   .title {
-    position: absolute;
     font-size: 3.5em;
-    width: 100%;
-    margin: 0 auto;
-    @media screen and (min-width: 48em) {
-      font-size: 4.0em;
-    }
-    text-align: center;
-    span.subtitle {
-      font-size: 0.4em;
-      text-align: center;
-    }
+    @media screen and (min-width: 48em) { font-size: 4.0em; }
+  }
+  .subtitle {
+    margin-top: 15px;
+    font-size: 1.5em;
   }
 }
 
