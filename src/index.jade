@@ -3,7 +3,7 @@
     .name
       a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')= public._data.meta.copyright
     .occupation= public._data.meta.occupation
-  != partial('_shared/haiiro_icon', { size: '30', color: '#e4e4e4', id: 'nav-icon' })
+  != partial('_shared/haiiro_icon', { size: '30', id: 'nav-icon' })
 nav#switcher.sticky
   .tabs
     .tab#planning-tab Planning
@@ -100,6 +100,7 @@ script.
       }
     }
     window.addEventListener('scroll', function(e) { handleHeader(); });
+    handleHeader();
 
     var scrollTo = function(target) {
       setTimeout(function() {
