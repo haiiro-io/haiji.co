@@ -39,11 +39,9 @@ svg.haiiro-icon {
   padding: 20px 0;
 }
 
-.default-hidden {
+.default-hidden(@visible-display: block) {
   display: none;
-  &.show {
-    display: block;
-  }
+  &.show { display: @visible-display; }
 }
 
 #cover {
@@ -344,7 +342,7 @@ body#page-work {
     }
   }
   footer {
-    .default-hidden;
+    .default-hidden(flex);
     background-color: @haiiro-background-dark;
   }
 }
