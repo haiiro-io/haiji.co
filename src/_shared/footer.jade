@@ -1,19 +1,17 @@
 footer
-  .g-wide-5-24.g-1-24
-  .g-wide-14-24.g-11-12
-    a.paint#face-icon(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')
-    p#copyright
-      | &copy;&nbsp;
-      = new Date().getYear() + 1900
-      | &nbsp;
-      = public._data.meta.copyright
-      | .
-      br/
-      | Lovingly made by&nbsp;
-      a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(',') target= '_blank') Haiji
-      | &nbsp;&amp;&nbsp;
-      a.paint(href= 'http://hmsk.me', data-colors= public._data.meta.hmsk_colors.join(','), target= '_blank') hmsk
-      | .
+  a.paint#face-icon(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(','), target= '_blank')
+  #copyright
+    | &copy;&nbsp;
+    = new Date().getYear() + 1900
+    | &nbsp;
+    = public._data.meta.copyright
+    | .
+  #authors
+    | Lovingly made by&nbsp;
+    a.paint(href= public._data.meta.profile_url, data-colors= public._data.meta.profile_colors.join(',') target= '_blank') Haiji
+    | &nbsp;&amp;&nbsp;
+    a.paint(href= 'http://hmsk.me', data-colors= public._data.meta.hmsk_colors.join(','), target= '_blank') hmsk
+    | .
 
 script.
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
