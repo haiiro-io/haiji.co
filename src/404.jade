@@ -1,11 +1,13 @@
 #page-notfound
-  .title haiji404
-  .subtitle Not Found
+  section
+    .title haiji404
+    .subtitle Not Found
+  != partial('_shared/footer')
 
 script.
   (function() {
     var resizeBanner = function() {
-      u('#notfound').attr('style', 'height: ' + window.innerHeight+ 'px;');
+      u('section').attr('style', 'height: ' + (window.innerHeight - u('footer').size().height) + 'px;');
     };
     window.onresize = function() {
       if (window.innerWidth < 768) return;

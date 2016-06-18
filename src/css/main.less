@@ -308,18 +308,23 @@ body > #page-work {
 }
 
 body > #page-notfound {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: @haiiro-background-dark;
-  text-align: center;
-  .title {
-    font-size: 3.5em;
-    .wide-screen({ font-size: 4.0em; });
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: @haiiro-background-dark;
+    text-align: center;
+    .title {
+      font-size: 3.5em;
+      .wide-screen({ font-size: 4.0em; });
+    }
+    .subtitle {
+      margin-top: 15px;
+      font-size: 1.5em;
+    }
   }
-  .subtitle {
-    margin-top: 15px;
-    font-size: 1.5em;
+  footer {
+    background-color: @haiiro-background-dark;
   }
 }
