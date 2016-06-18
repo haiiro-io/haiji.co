@@ -1,14 +1,31 @@
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.keyframes(@name, @block) {
+	@-moz-keyframes @name { @block(); }
+	@-webkit-keyframes @name { @block(); }
+	@keyframes @name { @block(); }
 }
 
-@keyframes fadein {
+.transition(@args) {
+  transition: @args;
+  -moz-transition: @args;
+  -webkit-transition: @args;
+}
+
+.keyframes(fadein, {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
+});
 
 .fadein(@duration) {
   animation: fadein @duration;
+  -moz-animation: fadein @duration;
   -webkit-animation: fadein @duration;
+}
+
+.default-hidden(@visible-display: block) {
+  display: none;
+  &.show { display: @visible-display; }
+}
+
+.wide-screen(@block) {
+  @media screen and (min-width: 48em) { @block(); }
 }

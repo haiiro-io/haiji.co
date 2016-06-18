@@ -5,35 +5,36 @@ html
   - imageBaseUrl = '/images/works/' + selected.name + '_';
   head
     != partial('../_shared/head', { title: selected.title, image: imageBaseUrl + '1.jpg', url: url } )
-  body#page-work
-    nav#nav-bar
-      .g-wide-6-24.g-1-4
-        != partial('../_shared/haiiro_icon', { size: '15', id: 'nav-icon' })
-      .g-wide-12-24.g-2-3
-        .g-wide-3-4.g-20-24
-          p.title= selected.title
-        .g-wide-1-4.g-4-24
-          p.year= selected.published_year
-    article
-      section#images
-        .g-wide-6-24.g-1-24
-        .g-wide-12-24.g-22-24
-          #image-list
-          if selected.video
-            iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
-      section#description
-        .g-wide-6-24.g-1-24
-        .g-wide-12-24.g-11-12
-          p.content!= selected.description.replace(/\n/g, "<br />")
-          if selected.role
-            h2 Role:
-            p= selected.role
-          if selected.link
-            h2 Link:
-            p
-              a(href= selected.link, target= '_blank')= selected.link
+  body
+    #page-work
+      nav#nav-bar
+        .g-wide-6-24.g-1-4
+          != partial('../_shared/haiiro_icon', { size: '15', id: 'nav-icon' })
+        .g-wide-12-24.g-2-3
+          .g-wide-3-4.g-20-24
+            p.title= selected.title
+          .g-wide-1-4.g-4-24
+            p.year= selected.published_year
+      article
+        section#images
+          .g-wide-6-24.g-1-24
+          .g-wide-12-24.g-22-24
+            #image-list
+            if selected.video
+              iframe.video(width="100%", src= selected.video, frameborder="0", allowfullscreen)
+        section#description
+          .g-wide-6-24.g-1-24
+          .g-wide-12-24.g-11-12
+            p.content!= selected.description.replace(/\n/g, "<br />")
+            if selected.role
+              h2 Role:
+              p= selected.role
+            if selected.link
+              h2 Link:
+              p
+                a(href= selected.link, target= '_blank')= selected.link
 
-    != partial('../_shared/footer')
+      != partial('../_shared/footer')
 
 script.
   (function() {
