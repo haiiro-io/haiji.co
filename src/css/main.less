@@ -1,4 +1,5 @@
 @import '_font-awesome/font-awesome.less';
+@import '_mixins';
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,300,700);
 
 @haiiro-background-dark: #e4e4e4;
@@ -338,19 +339,4 @@ body#page-work {
     .default-hidden(flex);
     background-color: @haiiro-background-dark;
   }
-}
-
-@-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.fadein(@duration) {
-  animation: fadein @duration;
-  -webkit-animation: fadein @duration;
 }
