@@ -116,8 +116,10 @@ script.
     };
     u('#nav-icon').on('click', function(e) {
       if (window.scrollY > 0) {
+        ga('send', 'event', 'haiiro-icon', 'click', 'toTop');
         scrollTo('#cover');
       } else {
+        ga('send', 'event', 'haiiro-icon', 'click', 'onTop');
         u('.myself > .name > a').trigger('click');
       }
     });
@@ -130,6 +132,7 @@ script.
     };
     u('.tab').on('click', function(event) {
       target = u(this).attr('id').replace('-tab', '')
+      ga('send', 'event', 'tab', 'click', target);
       switchWorks(target);
       window.location.hash = target;
       
