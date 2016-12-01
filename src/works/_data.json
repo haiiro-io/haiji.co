@@ -1,5 +1,53 @@
 [
   {
+    "name": "find-nucleus",
+    "published_year": 2016,
+    "title": "原子核を見つけよう！ – 仁科加速器研究センター",
+    "description": "日本科学未来館で行われた科学イベント「サイエンスアゴラ2016」にて、理化学研究所 仁科加速器研究センターの展示・体験コンテンツ「原子核をみつけよう！」のデザインをお手伝いさせていただきました。\n\nProgramming: 新多真琴 / 瀬尾浩二郎 （セオ商事）",
+    "role": "Design",
+    "link": "http://lab.theocorp.jp/scienceagora_2016/",
+    "image_count": 6,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#4fefcc", "#26203e", "#ec2c71", "#00eefb", "#11a3d0", "#80a3ad", "#e1ff85"]
+  },
+  {
+    "name": "japanwomenaward",
+    "published_year": 2016,
+    "title": "Japan Women Award",
+    "description": "Forbes主催、LiB協力による、1000人のキャリア女性、1000社の企業が選ぶ、日本最大規模の活躍女性＆企業表彰アワードのサイトデザインを行いました。",
+    "role": "Web Design",
+    "link": "https://women-award.jp/",
+    "image_count": 2,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#c7e1ec", "#e6f5fb", "#ad8d3f"]
+  },
+  {
+    "name": "remote-style",
+    "published_year": 2016,
+    "title": "Remote Style",
+    "description": "デザイナー、エンジニア向けにリモートワーク案件を紹介している「Remote Style」のサイトの企画＆デザインを行いました。窓をイメージしてデザインしたロゴをメインビジュアルにおき、自分の好きな風景、好きな環境で働こうというメッセージを込めました。サイト全体は、旅雑誌のような佇まいを目指しました。",
+    "role": "Web Planning, Web Design, Copywriting",
+    "link": "http://remotestyle.cast-er.com/",
+    "image_count": 3,
+    "video": null,
+    "tags": ["planning", "design"],
+    "colors": ["#ed534e", "#f3efec", "#e3e7c6", "#000000", "#cee1e5"]
+  },
+  {
+    "name": "remote-style-logo",
+    "published_year": 2016,
+    "title": "Remote Style ロゴデザイン",
+    "description": "デザイナー、エンジニア向けにリモートワーク案件を紹介している「Remote Style」のロゴをデザインしました。",
+    "role": "Logo Design",
+    "link": null,
+    "image_count": 1,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#ffffff", "#797979", "#c7c7c7"]
+  },
+  {
     "name": "orangelion-namecard",
     "published_year": 2016,
     "title": "Orange Lion名刺",
@@ -63,7 +111,7 @@
     "name": "google-android-taico",
     "published_year": 2015,
     "title": "Android Taico",
-    "description": "六本木ヒルズで実施された 祭 with Android というタッチ＆トライ施策のプランニングに参加しました。主に、２台の Android 端末を太鼓のバチのようにもって遊ぶことの出来る音楽ゲーム Android Taico を担当しました。",
+    "description": "六本木ヒルズで実施された 祭 with Android というタッチ＆トライ施策のプランニングに参加しました。主に、2台の Android 端末を太鼓のバチのようにもって遊ぶことの出来る音楽ゲーム Android Taico を担当しました。",
     "role": "Interactive Planning, UI Direction",
     "link": null,
     "image_count": 4,
