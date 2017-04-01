@@ -9,7 +9,7 @@
     "image_count": 2,
     "video": null,
     "tags": ["design"],
-    "colors": ["#081b43", "#ffffff"]
+    "colors": ["#081b43", "#ffffff", "#081b43", "#081b43"]
   },
   {
     "name": "find-nucleus",
