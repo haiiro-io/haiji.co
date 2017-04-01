@@ -1,5 +1,17 @@
 [
   {
+    "name": "dear-media",
+    "published_year": 2017,
+    "title": "Dear Media ロゴ＆名刺デザイン",
+    "description": "ディアメディア株式会社のロゴと名刺のデザインをしました。",
+    "role": "Design",
+    "link": "",
+    "image_count": 2,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#081b43", "#ffffff", "#081b43", "#081b43"]
+  },
+  {
     "name": "find-nucleus",
     "published_year": 2016,
     "title": "原子核を見つけよう！ – 仁科加速器研究センター",
