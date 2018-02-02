@@ -8,7 +8,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "harp": "^0.20.0",
+    "harp": "^0.25.0",
     "gh-pages": "^0.9.0"
   }
 }
