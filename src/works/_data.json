@@ -1,5 +1,41 @@
 [
   {
+    "name": "finery",
+    "published_year": 2018,
+    "title": "Finery ダッシュボードリニューアル",
+    "description": "ワードローブ管理アプリを手がけるニューヨークのスタートアップ「Finery」のダッシュボードリニューアル提案を行いました。カレンダーをメイン機能に据え、ダッシュボードで今日のコーディネートと予定の確認を行えるようにしました。また、現存するデザインコンポーネントを全て洗い出し、色やスペーシングのルールを統一・定めたデザインシステムも合わせて制作しました。",
+    "role": "Creative Direction, UX/UI Design",
+    "link": "https://www.finery.com/",
+    "image_count": 7,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#fff0e1", "#cb7663", "#000000", "#f5f5f5"]
+  },
+  {
+    "name": "laughly",
+    "published_year": 2018,
+    "title": "Laughly",
+    "description": "コメディーストリーミングアプリ「Laughly」のデザイン改善とデザインシステム作りを行いました。課題は、これまで音声のみの提供だったLaughlyに映像フォーマットを追加することでした。デザインプロセスは、競合調査、ユーザーインタビュー、プロトタイプ作りを行い、そして検証を繰り返し行いました。",
+    "role": "UX/UI Design",
+    "link": "https://www.laughly.com/",
+    "image_count": 4,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#fdde0e", "#373737", "#717171", "#247885", "#484848", "#252525", "#C23535"]
+  },
+  {
+    "name": "signifiant",
+    "published_year": 2017,
+    "title": "Signifiant ブランディング",
+    "description": "Post-IPO Startupの経営をテーマに掲げるシニフィアン株式会社のロゴからブランドアイデンティティの制作を行いました。シニフィアンという哲学用語から考えを出発し、シニフィアンという企業が経営者にとって知覚させるものは何だろう？と考えたときに、「空気」と捉えてデザインしました。時代の空気、従業員の空気、法人格の空気... 経営の息吹を吹き込むもの。また、同時に立ち上げられたメディア「Signifiant Style」のロゴとウェブも制作いたしました。\n\nEngineer: Kengo Hamasaki",
+    "role": "Creative Direction, Visual Design",
+    "link": "https://signifiant.jp/",
+    "image_count": 9,
+    "video": null,
+    "tags": ["design"],
+    "colors": ["#00b2b2", "#373938", "#ffffff"]
+  },
+  {
     "name": "dear-media",
     "published_year": 2017,
     "title": "Dear Media ロゴ＆名刺デザイン",
